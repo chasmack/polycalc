@@ -4,7 +4,7 @@
 
 This tool allows the user to create a command file from line table data. 
 The command file can then be processed to create AutoCAD LW polylines. 
-A typical line table looks like ... 
+A typical line table looks like this ... 
 
 ![alt text](https://raw.githubusercontent.com/chasmack/polycalc/master/data/line-table.jpg "PM1241 sheet 3/3 detail")
 
@@ -33,10 +33,10 @@ an example.
 `<id> BEGIN <x> <y>` - Start a new polyline at the specified x/y coordinates.
 
 `<id> <quadrant> <bearing> <distance>` - Add a line segment.  
-Quadrants are 1-NE 2=SE 3=SW 4=NW. Bearing is in DMS (DD.MMSS). 
+Quadrants are 1=NE, 2=SE, 3=SW, 4=NW. Bearing is in Degrees-Minutes-Seconds (DD.MMSS). 
 
 `<id> <direction> <delta> <radius>` - Add a curve tangent to previous segment.  
-Dierction is L=Left R=Right. Delta is in DMS (DDD.MMSS). 
+Dierction is L=Left, R=Right. Delta is in Degrees-Minutes-Seconds (DDD.MMSS). 
 
 `<id> <direction> <delta> <radius> <quadrant> <bearing>` - Add a non-tangent curve segment.  
 Radial quadrant and bearing are from the BC (Begin Curve) to the RP (Radial Point). 

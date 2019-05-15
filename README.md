@@ -11,9 +11,9 @@ A typical line table looks like ...
 As a line table can contain many dozens of lines it can be error prone to enter 
 the line and curve data interactively. The command file approach has a few advantages.
 
-* Command files can be easily checked against the original data 
-* Processing lists derived segment values and flags non-tangent curves
-* Use of polylines ensures all segments are continuous
+* Command files can be easily checked against the original line table data 
+* Command file processing lists derived segment values and flags non-tangent curves
+* Use of polylines ensures all segments are contiguous
 
 ### Command language
 

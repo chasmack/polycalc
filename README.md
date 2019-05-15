@@ -33,10 +33,13 @@ command elements can contain no spaces.
 Quadrants are 1=NE, 2=SE, 3=SW, 4=NW. Bearing is in Degrees-Minutes-Seconds (DD.MMSS). 
 
 `<id> <direction> <delta> <radius>` - Add a curve tangent to previous segment.  
-Dierction is L=Left, R=Right. Delta is in Degrees-Minutes-Seconds (DDD.MMSS). 
+Direction is L=Left, R=Right. Delta is in Degrees-Minutes-Seconds (DDD.MMSS). 
 
 `<id> <direction> <delta> <radius> <quadrant> <bearing>` - Add a non-tangent curve segment.  
 Radial quadrant and bearing are from the BC (Begin Curve) to the RP (Radial Point). 
+
+`<id> <deflection> <delta> <distance>` - Add a line segment using a deflection angle.  
+Deflection is DL=Left, DR=Right. Delta is in Degrees-Minutes-Seconds (DDD.MMSS). 
 
 `<id> PUSH` - Push the last coordinate in the current polyline onto the coordinate stack.  
 The current polyline is not affected. 

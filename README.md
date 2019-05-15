@@ -98,3 +98,6 @@ FL01 2 10.3620 136.38
 FL02 3 60.1110 55.91
 FL03 2 15.5230 354.22
 ```
+
+![alt text](https://raw.githubusercontent.com/chasmack/polycalc/master/data/linedata-demo.jpg "PM1241 portion")
+

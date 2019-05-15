@@ -8,9 +8,8 @@ typical line table might look like this...
 
 ![alt text](https://raw.githubusercontent.com/chasmack/polycalc/master/data/line-table.jpg "PM1241 sheet 3/3 detail")
 
-As a table can go on for dozens of lines it can be error prone to enter 
-the line and curve parameters interactively. Our approach here has a few 
-advantages.
+As line table data can go on for dozens of lines it can be error prone to enter 
+the line and curve parameters interactively. This approach has a few advantages.
 
 * Command files can be easily checked against the original data
 * Processing calculates and lists derived values and flags non-tangent curves

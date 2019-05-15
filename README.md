@@ -47,7 +47,7 @@ The current polyline is not affected.
 
 ### Example
 
-See the `linedata-demo` and associated parcel maps in the `data` directory for 
+See the `linedata-demo` and parcel map `PM1241` in the `data` directory for 
 an example. 
 
 ```

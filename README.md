@@ -1,6 +1,6 @@
 # polycalc
 
-#### Create AutoCAD polylines from line table data
+### Create AutoCAD polylines from line table data
 
 This tool allows you to create a command file from a typical line table 
 which is then processed to create AutoCAD LW polylines. A portion of a 
@@ -16,7 +16,7 @@ advantages.
 * Processing calculates and lists derived values and flags non-tangent curves
 * Use of polylines ensures all segments are continuous
 
-#### Command language
+### Command language
 
 Each line of a command file describes one segment or auxiliary operation. 
 Blank lines and lines starting with a hash (#) are ignored. A list of polylines 

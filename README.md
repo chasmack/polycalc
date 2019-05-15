@@ -24,7 +24,7 @@ polyline in the polyline list. Each command starts an arbitrary id and subsequen
 command elements are separated by space. The command id and subsequent command elements 
 can contain no spaces. 
 
-#### Commands are ...
+### Commands
 
 * `<id> BEGIN <x> <y>` - start a new polyline ar the specified coordinates.
 * `<id> <quadrant> <bearing> <distance>` - add a line segment. Quadrants are 

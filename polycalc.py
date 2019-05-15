@@ -234,12 +234,12 @@ def draw_polylines(line_data):
             polylines[-1].pop()
             if len(polylines[-1]) == 0:
                 polylines.pop()
-        elif params[1] == 'JOIN':
-            # Join the last two polylines
-            if len(polylines) < 2:
-                raise ValueError('Two polylines required for join: %s' % line)
-            poly = polylines.pop()
-            polylines[-1] += poly
+        # elif params[1] == 'JOIN':
+        #     # Join the last two polylines
+        #     if len(polylines) < 2:
+        #         raise ValueError('Two polylines required for join: %s' % line)
+        #     poly = polylines.pop()
+        #     polylines[-1] += poly
         elif params[1] in '1234':
             # Line segment by bearing/distance
             if len(params) != 4:

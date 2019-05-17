@@ -226,14 +226,19 @@ def draw_polylines(line_data):
             # Pop a point from the points stack and start an new polyline
             if len(pts_stack) == 0:
                 raise ValueError('No point to pop: %s' % line)
-            polylines.append([pts_stack.pop()])
+            poly = pts_stack.pop()
+            polylines.append([poly])
+            if poly[0] != params[0]:
+                print('\n### Different IDs PUSH: %s POP: %s.' % (poly[0], params[0]))
         elif params[1] == 'UNDO':
             # Pop the last point off of the current polyline
             if len(polylines) == 0:
                 raise ValueError('No point to undo: %s' % line)
-            polylines[-1].pop()
+            poly = polylines[-1].pop()
             if len(polylines[-1]) == 0:
                 polylines.pop()
+            if poly[0] != params[0]:
+                print('\n### Different IDs poly: %s UNDO: %s.' % (poly[0], params[0]))
         # elif params[1] == 'JOIN':
         #     # Join the last two polylines
         #     if len(polylines) < 2:
@@ -284,10 +289,10 @@ def create_dxf(polys, dxf_file):
 
 if __name__ == '__main__':
 
-    # LINE_DATA = 'data/linedata-pm1241.txt'
-    # DXF_FILE = 'data/linedata-pm1241.dxf'
-    LINE_DATA = 'data/linedata-demo.txt'
-    DXF_FILE = 'data/linedata-demo.dxf'
+    LINE_DATA = 'data/linedata-alderpoint.txt'
+    DXF_FILE = 'data/linedata-alderpoint.dxf'
+    # LINE_DATA = 'data/linedata-demo.txt'
+    # DXF_FILE = 'data/linedata-demo.dxf'
 
     # polys = []
     # polys.append([

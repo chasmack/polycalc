@@ -1,5 +1,6 @@
 import ezdxf
 import re
+import io
 from math import cos, sin, tan, atan2, pi
 from math import degrees, radians, copysign, isclose
 import numpy as np
@@ -84,235 +85,226 @@ def dms_string(a, sec_decimals=1):
     return format % ('' if sign < 0 else '-', deg, min, sec)
 
 
-def bearing_distance(poly, id, quad, bearing, distance):
-    if len(poly) == 0:
-        raise ValueError('No initial point set line %s' % id)
-    try:
-        a = bearing_angle(quad, bearing)
-    except ValueError:
-        raise ValueError('Bad bearing format line %s: quad=%s bearing=%s' % (id, quad, bearing))
-    d = float(distance)
-    p0 = np.array(poly[-1][1:3], dtype=np.double)
-    p1 = p0 + d * np.array((cos(a), sin(a)), dtype=np.double)
-    poly.append([id] + list(p1) + [0.0])
+def process_line_data(f):
 
-
-
-def deflection_distance(poly, id, dir, delta, distance):
-    if len(poly) == 0:
-        raise ValueError('No initial point set line %s' % id)
-    if len(poly) == 1:
-        raise ValueError('No back tangent line %s' % id)
-    a = dms_angle(delta)
-    a *= -1 if dir == 'DL' else +1
-    d = float(distance)
-    p0 = np.array(poly[-2][1:3], dtype=np.double)
-    a0 = poly[-2][3]
-    p1 = np.array(poly[-1][1:3], dtype=np.double)
-
-    # Calculate back tangent at p1, chord length
-    v = p1 - p0
-    t = atan2(v[1], v[0]) + a0 / 2
-
-    p2 = p1 + d * np.array((cos(t + a), sin(t + a)), dtype=np.double)
-    poly.append([id] + list(p2) + [0.0])
-
-
-def delta_radius(poly, id, dir, delta, radius):
-    if len(poly) == 0:
-        raise ValueError('No initial point set line %s' % id)
-    if len(poly) == 1:
-        raise ValueError('No back tangent line %s' % id)
-    a = dms_angle(delta)
-    a *= -1 if dir == 'L' else +1
-    r = float(radius)
-
-    p0 = np.array(poly[-2][1:3], dtype=np.double)
-    a0 = poly[-2][3]
-    p1 = np.array(poly[-1][1:3], dtype=np.double)
-
-    # Calculate back tangent at p1, chord length
-    v = p1 - p0
-    t = atan2(v[1], v[0]) + a0 / 2
-    c = abs(2.0 * r * sin(a / 2.0))
-
-    poly[-1][3] = a
-    p2 = p1 + c * np.array((cos(t + a / 2), sin(t + a / 2)), dtype=np.double)
-    poly.append([id] + list(p2) + [0.0])
-
-
-def delta_radius_radial(poly, id, dir, delta, radius, radial_quad, radial_bearing):
-    if len(poly) == 0:
-        raise ValueError('No initial point set line %s' % id)
-    a = dms_angle(delta)
-    a *= -1 if dir == 'L' else +1
-    r = float(radius)
-    try:
-        t = bearing_angle(radial_quad, radial_bearing) - copysign(pi/2, a)
-    except ValueError:
-        raise ValueError('Bad bearing format line %s: quad=%s bearing=%s' % (id, radial_quad, radial_bearing))
-    p1 = np.array(poly[-1][1:3], dtype=np.double)
-    c = abs(2.0 * r * sin(a / 2.0))
-    poly[-1][3] = a
-    p2 = p1 + c * np.array((cos(t + a / 2), sin(t + a / 2)), dtype=np.double)
-    poly.append([id] + list(p2) + [0.0])
-
-
-def check_poly(poly):
-    if len(poly) == 0:
-        raise ValueError('Empty polyline error')
-    if len(poly) == 1:
-        raise ValueError('Single point polyline error')
-
-    for i in range(1, len(poly)):
-        print('\nSegment: %s' % poly[i][0])
-        p0 = np.array(poly[i-1][1:3], dtype=np.double)
-        print('Begin . . . . .  X: %.3f        Y: %.3f' % (p0[0], p0[1]))
-        p1 = np.array(poly[i][1:3], dtype=np.double)
-        print('End . . . . . .  X: %.3f        Y: %.3f' % (p1[0], p1[1]))
-
-        d = poly[i-1][3]
-        if d == 0:
-            # Line segment
-            v = p1 - p0
-            dist = np.sqrt(np.square(v).sum())
-            a = atan2(v[1], v[0])
-            print('  Distance: %.3f      Course: %s' % (dist, bearing_string(a)))
-
-        else:
-            # Curve segment
-            v = p1 - p0
-            a = atan2(v[1], v[0])
-            c = np.sqrt(np.square(v).sum())
-            r = c / 2.0 / sin(d / 2.0)
-            l = r * d
-            t = r * tan(d / 2.0)
-            print('   Tangent: %.3f       Chord: %.3f      Course: %s' % (t, c, bearing_string(a)))
-            print('Arc Length: %.3f      Radius: %.3f       Delta: %s' % (l, r, dms_string(d)))
-
-        if i > 1:
-
-            dp = poly[i-2][3]
-            if d or dp:
-                # Check previous segment is tangent
-                vp = p0 - np.array(poly[i-2][1:3], dtype=np.double)
-                da = a - d / 2 - atan2(vp[1], vp[0]) - dp / 2
-                if round(da, 6):
-                    print('\n### Segment %s is not tangent to %s.' % (poly[i][0], poly[i-1][0]))
-                    print('### Difference in tangents: %s' % dms_string(da))
-
-
-def draw_polylines(line_data):
-
-    polylines = []
-    pts_stack = []
-    for line in line_data:
-        line = line.strip()
+    # Create a list of line commands removing comments
+    line_data = []
+    for line in f:
+        line = line.decode(encoding="utf-8").strip()
         if line == '' or line.startswith('#'):
             continue
-        params = line.split()
+        line_data.append(line)
 
-        if params[1] == 'BEGIN':
+    listing = []
+    polylines = []
+    points = {}
+
+    for i, line in enumerate(line_data):
+
+        params = line.split()
+        if len(params) < 2:
+            raise ValueError('Bad line format: %s' % line)
+        id = params.pop(0)
+        cmd = params.pop(0)
+
+        if cmd == 'BEGIN':
             # Start a new polyline
-            if len(params) != 4:
+            if len(params) != 2:
                 raise ValueError('Bad line format: %s' % line)
-            polylines.append([params[0:1] + [float(x) for x in params[2:4]] + [0.0]])
-        elif params[1] == 'PUSH':
-            # Save last point onto the points stack
+            try:
+                x, y = map(float, params)
+            except Exception as e:
+                raise ValueError('Bad x/y coordinate: %s' % line)
+            vert = [x, y, 0.0]
+            polylines.append([vert])
+            listing.append('%s - Begin polyline' % id)
+            listing.append('Start point:  N: %.3f  E: %.3f' % (y, x))
+            listing.append('')
+
+        elif cmd == 'STO':
+            # Save coordinates of the last point in the polyline to the points list
+            if len(params) != 0:
+                raise ValueError('Bad line format: %s' % line)
             if len(polylines) == 0:
-                raise ValueError('No point to push: %s' % line)
-            pts_stack.append(params[0:1] + polylines[-1][-1][1:3] + [0.0])
-        elif params[1] == 'POP':
-            # Pop a point from the points stack and start an new polyline
-            if len(pts_stack) == 0:
-                raise ValueError('No point to pop: %s' % line)
-            poly = pts_stack.pop()
-            polylines.append([poly])
-            if poly[0] != params[0]:
-                print('\n### Different IDs PUSH: %s POP: %s.' % (poly[0], params[0]))
-        elif params[1] == 'UNDO':
+                raise ValueError('No point to store: %s' % line)
+            points[id] = list(polylines[-1][-1])
+
+        elif cmd == 'REC':
+            # Recall a point from the points list and start an new polyline
+            if len(params) != 0:
+                raise ValueError('Bad line format: %s' % line)
+            if id not in points:
+                raise ValueError('Point not found: %s' % line)
+            x, y = points[id][0:2]
+            poly = [points[id]]
+            polylines.append(poly)
+            listing.append('%s - Begin polyline' % id)
+            listing.append('Start point:  N: %.3f  E: %.3f' % (y, x))
+            listing.append('')
+
+        elif cmd == 'UNDO':
             # Pop the last point off of the current polyline
             if len(polylines) == 0:
                 raise ValueError('No point to undo: %s' % line)
-            poly = polylines[-1].pop()
+            polylines[-1].pop()
             if len(polylines[-1]) == 0:
                 polylines.pop()
-            if poly[0] != params[0]:
-                print('\n### Different IDs poly: %s UNDO: %s.' % (poly[0], params[0]))
-        # elif params[1] == 'JOIN':
+                listing.append('%s - Delete polyline' % id)
+            else:
+                polylines[-1][-1][-1] = 0.0
+                listing.append('%s - Delete last segment' % id)
+            listing.append('')
+
+        # elif cmd == 'JOIN':
         #     # Join the last two polylines
         #     if len(polylines) < 2:
         #         raise ValueError('Two polylines required for join: %s' % line)
         #     poly = polylines.pop()
         #     polylines[-1] += poly
-        elif params[1] in '1234':
+
+        elif cmd in '1234':
             # Line segment by bearing/distance
-            if len(params) != 4:
+            if len(params) != 2:
                 raise ValueError('Bad line format: %s' % line)
-            bearing_distance(polylines[-1], *params)
-        elif params[1] in 'LR':
-            if len(params) == 4:
-                # Tangent curve from last segment by delta/radius
-                delta_radius(polylines[-1], *params)
-            elif len(params) == 6:
-                # Non-tangent curve by delta/radius/radial
-                delta_radius_radial(polylines[-1], *params)
+            bearing, distance = params
+            quad = cmd
+            if len(polylines) == 0:
+                raise ValueError('No initial point: %s' % line)
+            poly = polylines[-1]
+            try:
+                a = bearing_angle(quad, bearing)
+                d = float(distance)
+            except Exception:
+                raise ValueError('Bad bearing/distance: %s' % line)
+
+            p0 = np.array(poly[-1], dtype=np.double)
+            p1 = p0 + d * np.array((cos(a), sin(a), 0), dtype=np.double)
+            poly.append(list(p1))
+
+            x, y, delta = polylines[-1][-1]
+            listing.append('%s - Line to %s' % (id, ('NE','SE','SW','NW')[int(quad) - 1]))
+            listing.append('End point:  N: %.3f  E: %.3f' % (y, x))
+            listing.append('')
+
+        elif cmd in 'LR':
+            if len(params) < 2:
+                raise ValueError('Bad line format: %s' % line)
+            delta, radius = params[0:2]
+            try:
+                a = dms_angle(delta)
+                a *= -1 if cmd == 'L' else +1
+                r = float(radius)
+            except Exception:
+                raise ValueError('Bad delta/radius: %s' % line)
+
+            if len(polylines) == 0:
+                raise ValueError('No initial point: %s' % line)
+            poly = polylines[-1]
+            p1 = np.array(poly[-1], dtype=np.double)
+
+            # Calculate bearing of back tangent
+            if len(params) == 2:
+                # Tangent curve
+                if len(poly) < 2:
+                    raise ValueError('No back tangent: %s' % line)
+                p0 = np.array(poly[-2], dtype=np.double)
+                v = p1 - p0
+                t = atan2(v[1], v[0]) - v[2] / 2
+
+                listing.append('%s - Tangent curve to %s' % (id, 'Right' if a < 0 else 'Left'))
+
+            elif len(params) == 4:
+                # Non-tangent curve with radial
+                quad, bearing = params[2:4]
+                try:
+                    t = bearing_angle(quad, bearing) - copysign(pi / 2, a)
+                except ValueError:
+                    raise ValueError('Bad quadrant/bearing: %s' % line)
+
+                listing.append('%s - Non-Tangent curve to %s' % (id, 'Rightt' if a < 0 else 'Left'))
+
             else:
                 raise ValueError('Bad line format: %s' % line)
-        elif params[1] in ('DR', 'DL'):
+
+            c = abs(2.0 * r * sin(a / 2.0))
+            p2 = p1 + c * np.array((cos(t + a / 2), sin(t + a / 2), 0), dtype=np.double)
+
+            polylines[-1].append(list(p2))
+            polylines[-1][-2][-1] = a
+
+            x, y, delta = polylines[-1][-1]
+            listing.append('End point:  N: %.3f  E: %.3f' % (y, x))
+            listing.append('')
+
+
+        elif cmd in ('DR', 'DL'):
             # Deflection angle/distance
-            if len(params) == 4:
-                deflection_distance(polylines[-1], *params)
+            if len(params) != 2:
+                raise ValueError('Bad line format: %s' % line)
+            delta, distance = params[0:2]
+            try:
+                a = dms_angle(delta)
+                a *= -1 if cmd == 'DL' else +1
+                d = float(distance)
+            except Exception:
+                raise ValueError('Bad deflection/distance: %s' % line)
+
+            if len(polylines) == 0:
+                raise ValueError('No initial point: %s' % line)
+            poly = polylines[-1]
+            if len(poly) < 2:
+                raise ValueError('No back tangent line: %s' % line)
+
+            p0 = np.array(poly[-2], dtype=np.double)
+            p1 = np.array(poly[-1], dtype=np.double)
+
+            # Calculate back tangent at p1, chord length
+            v = p1 - p0
+            t = atan2(v[1], v[0]) - v[2] / 2
+
+            p2 = p1 + d * np.array((cos(t + a), sin(t + a), 0.0), dtype=np.double)
+            poly.append(list(p2))
+
         else:
             raise ValueError('Bad line format: %s' % line)
 
-    return polylines
-
-
-def create_dxf(polys, dxf_file):
     dwg = ezdxf.new('R2010')
     dwg.header['$INSUNITS'] = INSUNITS_FOOT
     ms = dwg.modelspace()
 
-    for poly in polys:
-        for i in range(len(poly)):
-            id, x, y, delta = poly[i]
+    for poly in polylines:
+        for i, (x, y, delta) in enumerate(poly):
             if delta != 0:
-                poly[i] = [x, y, 0, 0, copysign(tan(delta / 4.0), delta)]
+                poly[i][2:] = [0, 0, copysign(tan(delta / 4.0), delta)]
             else:
-                poly[i] = [x, y]
-
+                poly[i].pop()
         ms.add_lwpolyline(poly)
 
-    dwg.saveas(dxf_file)
+    with io.StringIO() as f:
+        dwg.write(f)
+        dxf = f.getvalue()
+
+    return dxf, listing
 
 
 if __name__ == '__main__':
 
+    # LINE_DATA = r'D:\Drafting\Projects-PWS\1185-19_Alderpoint-PM5.0\gis\1185_Alderpoint_calcs.txt'
+    # DXF_FILE  = r'D:\Drafting\Projects-PWS\1185-19_Alderpoint-PM5.0\dwg\1185_Alderpoint_calcs.dxf'
     LINE_DATA = 'data/linedata-alderpoint.txt'
     DXF_FILE = 'data/linedata-alderpoint.dxf'
+    LST_FILE = 'data/linedata-alderpoint.lst'
     # LINE_DATA = 'data/linedata-demo.txt'
     # DXF_FILE = 'data/linedata-demo.dxf'
 
-    # polys = []
-    # polys.append([
-    #     [6072805.940408997, 1928939.402381297, 0.0],
-    #     [6072891.260789272, 1928861.596509992, radians(-27.466666666667)],
-    #     [6072949.527734600, 1928774.899767500, 0.0]
-    # ])
+    with open(LINE_DATA, 'rb') as f:
+        dxf, listing = process_line_data(f)
 
-    line_data = []
-    with open(LINE_DATA) as f:
-        for line in f:
-            if line.strip() and not line.startswith('#'):
-                line_data.append(line)
+    with open(LST_FILE, 'w') as f:
+        f.write('\n'.join(listing))
 
-    polys = draw_polylines(line_data)
-
-    for poly in polys:
-        check_poly(poly)
-
-    create_dxf(polys, DXF_FILE)
+    with open(DXF_FILE, 'w') as f:
+        f.write(dxf)
 
     # for brg in ('100.0000', '223.4500', '323.0015', '490.0000'):
     #     try:

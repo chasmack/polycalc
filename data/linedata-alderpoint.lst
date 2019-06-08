@@ -1,0 +1,395 @@
+AP00 - Begin polyline
+Start point:  N: 1928884.745  E: 6072854.191
+
+AP20 - Line to SE
+End point:  N: 1928806.939  E: 6072939.511
+
+AP21 - Tangent curve to Left
+End point:  N: 1928756.890  E: 6073031.198
+
+AP22 - Line to SE
+End point:  N: 1928746.666  E: 6073069.631
+
+AP23 - Tangent curve to Right
+End point:  N: 1928692.376  E: 6073175.457
+
+AP24 - Line to SE
+End point:  N: 1928650.974  E: 6073225.824
+
+AP25 - Tangent curve to Left
+End point:  N: 1928571.129  E: 6073386.026
+
+AP26 - Line to SE
+End point:  N: 1928534.626  E: 6073537.346
+
+AP27 - Tangent curve to Right
+End point:  N: 1928450.451  E: 6073646.896
+
+AP28 - Line to SE
+End point:  N: 1928376.797  E: 6073686.866
+
+AP29A - Tangent curve to Left
+End point:  N: 1928357.813  E: 6073700.235
+
+AP29A - Delete last segment
+
+AP29 - Tangent curve to Left
+End point:  N: 1928338.901  E: 6073826.468
+
+AP30 - Line to NE
+End point:  N: 1928399.830  E: 6073927.322
+
+AP31 - Tangent curve to Left
+End point:  N: 1928539.081  E: 6073970.771
+
+AP32 - Line to NW
+End point:  N: 1928623.540  E: 6073932.806
+
+AP33 - Tangent curve to Right
+End point:  N: 1928790.057  E: 6073948.125
+
+AP34 - Line to NE
+End point:  N: 1928855.503  E: 6073993.470
+
+AP35 - Tangent curve to Left
+End point:  N: 1928949.395  E: 6074033.229
+
+AP36 - Line to NE
+End point:  N: 1929019.155  E: 6074047.021
+
+AP37 - Tangent curve to Right
+End point:  N: 1929097.171  E: 6074070.928
+
+AP38 - Line to NE
+End point:  N: 1929210.871  E: 6074118.938
+
+AP39 - Tangent curve to Left
+End point:  N: 1929256.165  E: 6074135.267
+
+AP40 - Line to NE
+End point:  N: 1929397.334  E: 6074177.776
+
+AP41 - Tangent curve to Right
+End point:  N: 1929502.834  E: 6074302.086
+
+AP42 - Line to NE
+End point:  N: 1929512.695  E: 6074378.009
+
+AP43A - Tangent curve to Left
+End point:  N: 1929532.403  E: 6074449.884
+
+AP43A - Delete last segment
+
+AP43 - Tangent curve to Left
+End point:  N: 1929604.856  E: 6074548.339
+
+AP44 - Line to NE
+End point:  N: 1929687.438  E: 6074619.037
+
+AP45A - Tangent curve to Right
+End point:  N: 1929714.799  E: 6074647.047
+
+AP45A - Delete last segment
+
+AP45 - Tangent curve to Right
+End point:  N: 1929745.182  E: 6074696.312
+
+AP46 - Line to NE
+End point:  N: 1929787.569  E: 6074791.052
+
+AP47 - Tangent curve to Right
+End point:  N: 1929812.087  E: 6074872.992
+
+AP48 - Line to NE
+End point:  N: 1929818.675  E: 6074913.611
+
+AP49 - Tangent curve to Left
+End point:  N: 1929848.834  E: 6074999.670
+
+AP50 - Line to NE
+End point:  N: 1929902.132  E: 6075094.211
+
+AP51 - Tangent curve to Right
+End point:  N: 1929940.221  E: 6075222.898
+
+AP52 - Line to NE
+End point:  N: 1929949.849  E: 6075377.559
+
+AP53 - Tangent curve to Right
+End point:  N: 1929937.022  E: 6075509.821
+
+AP54 - Line to SE
+End point:  N: 1929892.898  E: 6075678.712
+
+AP55 - Tangent curve to Right
+End point:  N: 1929843.058  E: 6075767.299
+
+AP56 - Line to SE
+End point:  N: 1929813.720  E: 6075797.590
+
+AP57 - Tangent curve to Left
+End point:  N: 1929754.705  E: 6075879.430
+
+AP58 - Line to SE
+End point:  N: 1929689.585  E: 6076004.480
+
+AP59 - Tangent curve to Left
+End point:  N: 1929674.274  E: 6076189.727
+
+AP60 - Line to NE
+End point:  N: 1929702.600  E: 6076276.606
+
+AP61 - Tangent curve to Right
+End point:  N: 1929713.089  E: 6076399.161
+
+AP62 - Line to SE
+End point:  N: 1929700.013  E: 6076489.065
+
+AP63 - Tangent curve to Left
+End point:  N: 1929729.952  E: 6076626.400
+
+AP64A - Line to NE
+End point:  N: 1929737.686  E: 6076638.368
+
+AP64A - Delete last segment
+
+AP64 - Line to NE
+End point:  N: 1929798.294  E: 6076732.159
+
+AP65 - Tangent curve to Left
+End point:  N: 1929858.508  E: 6076805.204
+
+AP66 - Line to NE
+End point:  N: 1929908.971  E: 6076853.716
+
+AP67 - Tangent curve to Right
+End point:  N: 1929938.223  E: 6076892.890
+
+AP68A - Line to NE
+End point:  N: 1929968.429  E: 6076951.235
+
+AP68A - Delete last segment
+
+AP68 - Line to NE
+End point:  N: 1929975.435  E: 6076964.768
+
+AP69 - Tangent curve to Right
+End point:  N: 1929928.453  E: 6077089.900
+
+PL00 - Line to NE
+End point:  N: 1929937.604  E: 6077113.165
+
+PM993_MAIN - Begin polyline
+Start point:  N: 1929968.429  E: 6076951.235
+
+MD01 - Line to NW
+End point:  N: 1930042.963  E: 6076949.706
+
+MD02 - Line to NW
+End point:  N: 1930084.992  E: 6076883.287
+
+MD03 - Line to NW
+End point:  N: 1930329.295  E: 6076763.317
+
+MD04 - Line to NE
+End point:  N: 1930451.576  E: 6076774.706
+
+MD05 - Line to NE
+End point:  N: 1930582.481  E: 6076779.687
+
+MD06 - Line to NE
+End point:  N: 1930825.148  E: 6076838.787
+
+PL01 - Line to SW
+End point:  N: 1930818.861  E: 6076811.522
+
+PL02 - Line to NW
+End point:  N: 1930820.535  E: 6076801.663
+
+PL03 - Line to NW
+End point:  N: 1930986.116  E: 6075826.856
+
+PM993_MAIN_SAWMILL - Begin polyline
+Start point:  N: 1930042.963  E: 6076949.706
+
+SR165 - Line to NE
+End point:  N: 1930080.673  E: 6077052.476
+
+PM837_SECLINE_CTR - Begin polyline
+Start point:  N: 1929737.686  E: 6076638.368
+
+SL01 - Line to SW
+End point:  N: 1929704.531  E: 6076632.854
+
+SL02 - Line to SW
+End point:  N: 1929597.235  E: 6076615.009
+
+SL03 - Line to SW
+End point:  N: 1927091.021  E: 6076198.185
+
+SL04 - Line to SW
+End point:  N: 1927044.093  E: 6074845.699
+
+SL05 - Line to SW
+End point:  N: 1926997.165  E: 6073493.213
+
+SL06 - Line to NE
+End point:  N: 1928327.686  E: 6073695.630
+
+PM993_PAR_16+17 - Begin polyline
+Start point:  N: 1929892.898  E: 6075678.712
+
+PL01 - Line to NE
+End point:  N: 1929917.086  E: 6075685.032
+
+PL02 - Line to NE
+End point:  N: 1930986.109  E: 6075826.858
+
+PM1241_PAR_1+2 - Begin polyline
+Start point:  N: 1929714.799  E: 6074647.047
+
+PL01 - Line to SE
+End point:  N: 1929695.431  E: 6074662.855
+
+PL02-DET-A - Line to SE
+End point:  N: 1929415.081  E: 6074737.975
+
+PM993_SAWMILL - Begin polyline
+Start point:  N: 1929532.403  E: 6074449.884
+
+SR01 - Line to NE
+End point:  N: 1929659.464  E: 6074542.172
+
+SR02 - Line to NW
+End point:  N: 1929718.129  E: 6074507.765
+
+SR03 - Line to SW
+End point:  N: 1929687.680  E: 6074409.504
+
+SR04 - Line to NW
+End point:  N: 1929723.733  E: 6074360.063
+
+SR05 - Line to NE
+End point:  N: 1929801.033  E: 6074393.647
+
+SR06 - Line to NW
+End point:  N: 1929860.261  E: 6074355.611
+
+SR07 - Line to NW
+End point:  N: 1929882.367  E: 6074218.623
+
+PL01 - Line to NW
+End point:  N: 1929895.560  E: 6074204.332
+
+PM1241_RB - Begin polyline
+Start point:  N: 1929512.695  E: 6074378.009
+
+RB01 - Line to SE
+End point:  N: 1929486.882  E: 6074381.361
+
+RB02 - Tangent curve to Left
+End point:  N: 1929450.398  E: 6074394.527
+
+RB03 - Line to SE
+End point:  N: 1929428.723  E: 6074408.224
+
+RB04 - Tangent curve to Left
+End point:  N: 1929398.580  E: 6074467.377
+
+RB05 - Line to NE
+End point:  N: 1929414.975  E: 6074720.346
+
+RB06A - Tangent curve to Right
+End point:  N: 1929415.080  E: 6074737.975
+
+RB06B - Tangent curve to Right
+End point:  N: 1929410.374  E: 6074768.133
+
+RB07A - Line to SE
+End point:  N: 1929403.725  E: 6074793.465
+
+RB07A - Delete last segment
+
+RB07 - Line to SE
+End point:  N: 1929396.768  E: 6074819.967
+
+PM1241_FL - Begin polyline
+Start point:  N: 1929403.725  E: 6074793.465
+
+FL01 - Line to SE
+End point:  N: 1929269.674  E: 6074818.565
+
+FL02 - Line to SW
+End point:  N: 1929241.877  E: 6074770.055
+
+FL03 - Line to SE
+End point:  N: 1928901.166  E: 6074866.948
+
+FL04 - Line to NE
+End point:  N: 1928932.688  E: 6075088.547
+
+FL05 - Line to NE
+End point:  N: 1929007.949  E: 6075226.697
+
+FL06 - Line to SE
+End point:  N: 1928981.933  E: 6075526.832
+
+FL07 - Line to SW
+End point:  N: 1928801.557  E: 6075512.552
+
+FL08 - Line to SW
+End point:  N: 1928695.042  E: 6075477.480
+
+FL09 - Line to SE
+End point:  N: 1928649.160  E: 6075580.374
+
+PM1241_PAR_1+4 - Begin polyline
+Start point:  N: 1928695.042  E: 6075477.480
+
+PL01 - Line to SW
+End point:  N: 1928621.706  E: 6075453.333
+
+PM1241_PAR_1+3 - Begin polyline
+Start point:  N: 1928539.081  E: 6073970.771
+
+PL01 - Line to NE
+End point:  N: 1928549.331  E: 6073993.574
+
+PL02 - Line to SE
+End point:  N: 1928296.528  E: 6074421.963
+
+PM837_SECLINE_WEST - Begin polyline
+Start point:  N: 1928357.813  E: 6073700.235
+
+SL01 - Line to SW
+End point:  N: 1928327.710  E: 6073695.655
+
+PM993_PAR_18+19 - Begin polyline
+Start point:  N: 1928884.745  E: 6072854.191
+
+PL01 - Line to NE
+End point:  N: 1928903.217  E: 6072871.036
+
+PL02 - Line to NE
+End point:  N: 1929386.475  E: 6073604.315
+
+PL03 - Line to NE
+End point:  N: 1929397.693  E: 6073628.279
+
+SR13 - Line to SE
+End point:  N: 1929341.173  E: 6073683.274
+
+SR12 - Line to NE
+End point:  N: 1929399.352  E: 6073795.793
+
+SR11 - Line to NE
+End point:  N: 1929463.349  E: 6073960.432
+
+SR10 - Line to NE
+End point:  N: 1929521.611  E: 6074019.841
+
+SR09 - Line to NE
+End point:  N: 1929729.445  E: 6074098.271
+
+SR08 - Line to NE
+End point:  N: 1929882.340  E: 6074218.624

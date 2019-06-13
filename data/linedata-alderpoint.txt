@@ -80,7 +80,8 @@ AP68A UNDO
 AP68 1 62.3745 80.94
 AP69 R 95.5400 90.00
 # Property line paecels 1 & 11 per PM993 detail A
-PL00 1 68.3145 25.00
+# PL00 1 68.3145 25.00
+PL00 DL 90.0000 25.00
 # Main Drive at Alderpoint per PM993 detail A
 PM993_MAIN REC
 MD01 4 1.1030 74.55

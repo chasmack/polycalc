@@ -41,10 +41,10 @@ Radial quadrant and bearing are from the BC (Begin Curve) to the RP (Radial Poin
 `<id> <deflection> <delta> <distance>` - Add a line segment using a deflection angle.  
 Deflection is DL=Left, DR=Right. Delta is in Degrees-Minutes-Seconds (DDD.MMSS). 
 
-`<id> PUSH` - Push the last coordinate in the current polyline onto the coordinate stack.  
+`<id> STO` - Store the last coordinate in the current polyline in the coordinate list as `<id>`.  
 The current polyline is not affected. 
 
-`<id> POP` - Pop the last coordinate from the coordinate stack and start a new polyline. 
+`<id> REC` - Recall the coordinate `<id>` from the coordinate list and start a new polyline. 
 
 `<id> UNDO` - Remove the last segment from the current polyline. 
 
@@ -55,7 +55,6 @@ an example.
 
 ```
 # Portion of Alderpoint Road per PM1241. See line table sheet 3.
-#
 # Begin on right edge-of-right of way at the end of segment #17
 AP00 BEGIN 6074201.714 1929390.126
 APXX 4 73.1430 25.00
@@ -63,24 +62,24 @@ APXX 4 73.1430 25.00
 AP18 R 65.5030 150.00 2 73.1430
 AP19 1 82.3600 76.56
 # Save intersection Road B
-RB00 PUSH
+RB00 STO
 # Tangent curve to the left
 AP20 L 42.0200 270.00
 AP21 1 40.3400 108.71
 AP22 R 10.1240 220.00
 # Save the intersection of Alderpoint Rd. and property line
-PL00 PUSH
+PL00 STO
 AP23 R 15.0705 220.00
 AP24 1 65.5345 103.79
 AP25 R 14.5330 330.00
 # Last segment to the right edge of the right-of-way
 APXX DR 90.0000 25.00
 # Property line from Alderpoint Rd to Road B per Detail A
-PL00 POP
+PL00 REC
 PL01 2 39.1320 25.00
 PL02 2 15.0000 290.24
 # Road B per Detail D
-RB00 POP
+RB00 REC
 RB01 2 7.2400 26.03
 RB02 L 24.5315 90.00
 RB03 2 32.1715 25.64
@@ -91,12 +90,12 @@ RB06B R 11.4045 150.00
 # Segment of Road B along the property line
 RB07A 2 75.1730 26.19
 # Save intersection of Road B and fence line
-FL00 PUSH
+FL00 STO
 # Back to the start of segment #7
 RB07A UNDO
 RB07 2 75.1730 53.59
 # Fence line
-FL00 POP
+FL00 REC
 FL01 2 10.3620 136.38
 FL02 3 60.1110 55.91
 FL03 2 15.5230 354.22

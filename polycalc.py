@@ -85,6 +85,31 @@ def dms_string(a, sec_decimals=1):
     return format % ('' if sign < 0 else '-', deg, min, sec)
 
 
+def check_tangency(poly):
+    if len(poly) < 3:
+        raise ValueError('Tangency check requires two segments')
+
+    p0 = np.array(poly[-3][0:2], dtype=np.double)
+    d0 = poly[-3][2]
+    p1 = np.array(poly[-2][0:2], dtype=np.double)
+    d1 = poly[-2][2]
+    p2 = np.array(poly[-1][0:2], dtype=np.double)
+
+    v1 = p1 - p0
+    t1 = atan2(v1[1], v1[0]) + d0 / 2
+    v2 = p2 - p1
+    t2 = atan2(v2[1], v2[0]) + d1 / 2
+    dt = t2 - t1
+
+    resp = []
+    if round(dt, 6):
+        resp.append('### Segment is not tangent.')
+        resp.append('### Difference in tangents: %s' % dms_string(dt))
+        resp.append('')
+
+    return resp
+
+
 def process_line_data(f):
 
     # Create a list of line commands removing comments
@@ -118,7 +143,7 @@ def process_line_data(f):
             vert = [x, y, 0.0]
             polylines.append([vert])
             listing.append('%s - Begin polyline' % id)
-            listing.append('Start point:  N: %.3f  E: %.3f' % (y, x))
+            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
             listing.append('')
 
         elif cmd == 'STO':
@@ -139,7 +164,7 @@ def process_line_data(f):
             poly = [points[id]]
             polylines.append(poly)
             listing.append('%s - Begin polyline' % id)
-            listing.append('Start point:  N: %.3f  E: %.3f' % (y, x))
+            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
             listing.append('')
 
         elif cmd == 'UNDO':
@@ -181,10 +206,15 @@ def process_line_data(f):
             p1 = p0 + d * np.array((cos(a), sin(a), 0), dtype=np.double)
             poly.append(list(p1))
 
-            x, y, delta = polylines[-1][-1]
+            x, y = polylines[-1][-1][0:2]
             listing.append('%s - Line to %s' % (id, ('NE','SE','SW','NW')[int(quad) - 1]))
-            listing.append('End point:  N: %.3f  E: %.3f' % (y, x))
+            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
+            listing.append('  Distance: %-10.3f       Course: %s' % (d, bearing_string(a)))
             listing.append('')
+
+            if len(poly) > 2 and polylines[-1][-3][2]:
+                # Previous segment was a curve
+                listing += check_tangency(poly)
 
         elif cmd in 'LR':
             if len(params) < 2:
@@ -227,13 +257,19 @@ def process_line_data(f):
                 raise ValueError('Bad line format: %s' % line)
 
             c = abs(2.0 * r * sin(a / 2.0))
+
             p2 = p1 + c * np.array((cos(t + a / 2), sin(t + a / 2), 0), dtype=np.double)
 
             polylines[-1].append(list(p2))
             polylines[-1][-2][-1] = a
 
-            x, y, delta = polylines[-1][-1]
-            listing.append('End point:  N: %.3f  E: %.3f' % (y, x))
+            x, y = polylines[-1][-1][0:2]
+            delta = -1 * abs(polylines[-1][-2][-1])
+            arc_len = -1 * r * delta
+            tan_len = -1 * r * tan(delta / 2)
+            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
+            listing.append('  Tangent: %-10.3f        Chord:  %-10.3f     Course: %s' % (tan_len, c, bearing_string(t + a / 2)))
+            listing.append('  Arc Len: %-10.3f        Radius: %-10.3f     Delta:  %s' % (arc_len, r, dms_string(delta)))
             listing.append('')
 
 
@@ -263,7 +299,14 @@ def process_line_data(f):
             t = atan2(v[1], v[0]) - v[2] / 2
 
             p2 = p1 + d * np.array((cos(t + a), sin(t + a), 0.0), dtype=np.double)
-            poly.append(list(p2))
+            polylines[-1].append(list(p2))
+
+            x, y = polylines[-1][-1][0:2]
+            listing.append('%s - Line to %s' % (id, ('NE', 'SE', 'SW', 'NW')[int(quad) - 1]))
+            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
+            listing.append('  Distance: %-10.3f       Course: %s' % (d, bearing_string(t + a)))
+            listing.append('')
+
 
         else:
             raise ValueError('Bad line format: %s' % line)
@@ -289,13 +332,12 @@ def process_line_data(f):
 
 if __name__ == '__main__':
 
-    # LINE_DATA = r'D:\Drafting\Projects-PWS\1185-19_Alderpoint-PM5.0\gis\1185_Alderpoint_calcs.txt'
-    # DXF_FILE  = r'D:\Drafting\Projects-PWS\1185-19_Alderpoint-PM5.0\dwg\1185_Alderpoint_calcs.dxf'
-    LINE_DATA = 'data/linedata-alderpoint.txt'
-    DXF_FILE = 'data/linedata-alderpoint.dxf'
-    LST_FILE = 'data/linedata-alderpoint.lst'
-    # LINE_DATA = 'data/linedata-demo.txt'
-    # DXF_FILE = 'data/linedata-demo.dxf'
+    # LINE_DATA = 'data/linedata-alderpoint.txt'
+    # DXF_FILE = 'data/linedata-alderpoint.dxf'
+    # LST_FILE = 'data/linedata-alderpoint.lst'
+    LINE_DATA = 'data/linedata-demo.txt'
+    DXF_FILE = 'data/linedata-demo.dxf'
+    LST_FILE = 'data/linedata-demo.lst'
 
     with open(LINE_DATA, 'rb') as f:
         dxf, listing = process_line_data(f)

@@ -1,5 +1,4 @@
 # Portion of Alderpoint Road per PM1241. See line table sheet 3.
-#
 # Begin on right edge-of-right of way at the end of segment #17
 AP00 BEGIN 6074201.714 1929390.126
 APXX 4 73.1430 25.00

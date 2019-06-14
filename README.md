@@ -41,8 +41,7 @@ Radial quadrant and bearing are from the BC (Begin Curve) to the RP (Radial Poin
 `<id> <deflection> <delta> <distance>` - Add a line segment using a deflection angle.  
 Deflection is DL=Left, DR=Right. Delta is in Degrees-Minutes-Seconds (DDD.MMSS). 
 
-`<id> STORE <northing> <easting>` - Store a coordinate in the coordinate list as `<id>`.  
-The current polyline is not affected. 
+`<id> STORE <northing> <easting>` - Store a coordinate in the coordinate list as `<id>`. 
 
 `<id> STORE` - Store the last coordinate in the current polyline in the coordinate list as `<id>`. 
 

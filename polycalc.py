@@ -1,7 +1,7 @@
 import ezdxf
 import re
 import io
-from math import cos, sin, tan, atan2, pi
+from math import cos, sin, tan, atan2, hypot, pi
 from math import degrees, radians, copysign, isclose
 import numpy as np
 
@@ -137,34 +137,85 @@ def process_line_data(f):
             if len(params) != 2:
                 raise ValueError('Bad line format: %s' % line)
             try:
-                x, y = map(float, params)
+                n, e = map(float, params)
             except Exception as e:
                 raise ValueError('Bad x/y coordinate: %s' % line)
-            vert = [x, y, 0.0]
-            polylines.append([vert])
+            pt = [e, n, 0.0]
+            polylines.append([pt])
             listing.append('%s - Begin polyline' % id)
-            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
+            listing.append('  From N: %-14.3f     E: %.3f' % (n, e))
             listing.append('')
 
-        elif cmd == 'STO':
-            # Save coordinates of the last point in the polyline to the points list
+        elif cmd == 'BRANCH':
+            # Begin a new polyline from the last point
             if len(params) != 0:
                 raise ValueError('Bad line format: %s' % line)
             if len(polylines) == 0:
-                raise ValueError('No point to store: %s' % line)
-            points[id] = list(polylines[-1][-1])
+                raise ValueError('No polyline to branch: %s' % line)
 
-        elif cmd == 'REC':
+            polylines.append([polylines[-1][-1].copy()])
+            x, y = polylines[-1][-1][0:2]
+            listing.append('%s - Branch polyline' % id)
+            listing.append('  From N: %-14.3f     E: %.3f' % (y, x))
+            listing.append('')
+
+        elif cmd == 'RESUME':
+            # Move the current polyline to the bottom of the polyline list
+            if len(params) != 0:
+                raise ValueError('Bad line format: %s' % line)
+            if len(polylines) < 2:
+                raise ValueError('Need two polylines to swap: %s' % line)
+
+            polylines.insert(0, polylines.pop())
+            x, y = polylines[-1][-1][0:2]
+            listing.append('%s - Resume polyline' % id)
+            listing.append('  From N: %-14.3f     E: %.3f' % (y, x))
+            listing.append('')
+
+        elif cmd == 'STORE':
+            # Save coordinates of the last point in the polyline to the points list
+            if len(params) == 0:
+                if len(polylines) == 0:
+                    raise ValueError('No point to store: %s' % line)
+                points[id] = polylines[-1][-1].copy()
+            elif len(params) == 2:
+                try:
+                    n, e = map(float, params)
+                except ValueError:
+                    raise ValueError('Bad point coordinates: %s' % line)
+                points[id] = [e, n, 0.0]
+            else:
+                raise ValueError('Bad line format: %s' % line)
+
+        elif cmd == 'RECALL':
             # Recall a point from the points list and start an new polyline
             if len(params) != 0:
                 raise ValueError('Bad line format: %s' % line)
             if id not in points:
                 raise ValueError('Point not found: %s' % line)
-            x, y = points[id][0:2]
-            poly = [points[id]]
-            polylines.append(poly)
+            polylines.append([points[id].copy()])
+            x, y = polylines[-1][-1][0:2]
             listing.append('%s - Begin polyline' % id)
-            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
+            listing.append('  From N: %-14.3f     E: %.3f' % (y, x))
+            listing.append('')
+
+        elif cmd == 'CLOSE':
+            # Calculate closure between last point and a point in the points list.
+            if len(params) != 0:
+                raise ValueError('Bad line format: %s' % line)
+            if len(polylines) == 0:
+                raise ValueError('No polyline to close to: %s' % line)
+            if id not in points:
+                raise ValueError('Point not found: %s' % line)
+            p0 = np.array(polylines[-1][-1][0:2], dtype=np.double)
+            p1 = np.array(points[id][0:2], dtype=np.double)
+            v = p1 - p0
+            a = atan2(v[1], v[0])
+            d = hypot(v[1], v[0])
+            listing.append('%s - Closure' % id)
+            listing.append('  From N: %-14.3f     E: %.3f' % (p0[1], p0[0]))
+            listing.append('  To   N: %-14.3f     E: %.3f' % (p1[1], p1[0]))
+            listing.append('  Distance: %-10.3f       Course: %s' % (d, bearing_string(a)))
             listing.append('')
 
         elif cmd == 'UNDO':
@@ -177,7 +228,7 @@ def process_line_data(f):
                 listing.append('%s - Delete polyline' % id)
             else:
                 polylines[-1][-1][-1] = 0.0
-                listing.append('%s - Delete last segment' % id)
+                listing.append('%s - Delete segment' % id)
             listing.append('')
 
         # elif cmd == 'JOIN':
@@ -208,7 +259,7 @@ def process_line_data(f):
 
             x, y = polylines[-1][-1][0:2]
             listing.append('%s - Line to %s' % (id, ('NE','SE','SW','NW')[int(quad) - 1]))
-            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
+            listing.append('  To N: %-14.3f       E: %.3f' % (y, x))
             listing.append('  Distance: %-10.3f       Course: %s' % (d, bearing_string(a)))
             listing.append('')
 
@@ -251,7 +302,7 @@ def process_line_data(f):
                 except ValueError:
                     raise ValueError('Bad quadrant/bearing: %s' % line)
 
-                listing.append('%s - Non-Tangent curve to %s' % (id, 'Rightt' if a < 0 else 'Left'))
+                listing.append('%s - Non-Tangent curve to %s' % (id, 'Right' if a < 0 else 'Left'))
 
             else:
                 raise ValueError('Bad line format: %s' % line)
@@ -267,7 +318,7 @@ def process_line_data(f):
             delta = -1 * abs(polylines[-1][-2][-1])
             arc_len = -1 * r * delta
             tan_len = -1 * r * tan(delta / 2)
-            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
+            listing.append('  To N: %-14.3f       E: %.3f' % (y, x))
             listing.append('  Tangent: %-10.3f        Chord:  %-10.3f     Course: %s' % (tan_len, c, bearing_string(t + a / 2)))
             listing.append('  Arc Len: %-10.3f        Radius: %-10.3f     Delta:  %s' % (arc_len, r, dms_string(delta)))
             listing.append('')
@@ -303,7 +354,7 @@ def process_line_data(f):
 
             x, y = polylines[-1][-1][0:2]
             listing.append('%s - Line to %s' % (id, ('NE', 'SE', 'SW', 'NW')[int(quad) - 1]))
-            listing.append('  N: %-14.3f          E: %.3f' % (y, x))
+            listing.append('  To N: %-14.3f       E: %.3f' % (y, x))
             listing.append('  Distance: %-10.3f       Course: %s' % (d, bearing_string(t + a)))
             listing.append('')
 
@@ -332,12 +383,15 @@ def process_line_data(f):
 
 if __name__ == '__main__':
 
+    LINE_DATA = 'data/linedata-deerfield.txt'
+    DXF_FILE = 'data/linedata-deerfield.dxf'
+    LST_FILE = 'data/linedata-deerfield.lst'
     # LINE_DATA = 'data/linedata-alderpoint.txt'
     # DXF_FILE = 'data/linedata-alderpoint.dxf'
     # LST_FILE = 'data/linedata-alderpoint.lst'
-    LINE_DATA = 'data/linedata-demo.txt'
-    DXF_FILE = 'data/linedata-demo.dxf'
-    LST_FILE = 'data/linedata-demo.lst'
+    # LINE_DATA = 'data/linedata-demo.txt'
+    # DXF_FILE = 'data/linedata-demo.dxf'
+    # LST_FILE = 'data/linedata-demo.lst'
 
     with open(LINE_DATA, 'rb') as f:
         dxf, listing = process_line_data(f)

@@ -312,6 +312,9 @@ def process_line_data(f):
                            '  Tangent: %-10.3f        Chord:  %-10.3f     Course: %s\n' % (tan_len, c, bearing_string(t + a / 2)) + \
                            '  Arc Len: %-10.3f        Radius: %-10.3f     Delta:  %s\n' % (arc_len, r, dms_string(delta))
 
+            if len(poly) > 2:
+                listing += check_tangency(poly)
+
         elif cmd in ('DR', 'DL'):
             # Line by deflection angle/distance
             if len(params) != 2:

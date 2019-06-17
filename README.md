@@ -58,6 +58,12 @@ Add a line segment using a deflection angle. `<deflection>` is DL=Left, DR=Right
 
 `CLOSE <point_id>` - Calculate closure from endpoint of current polyline to specified point. 
 
+### Listing
+
+Processing of the line data produces a listing showing commands and 
+derived line and curve data. Non-tangent segments following a curve are flagged. 
+A PNEZD list of points is included at the bottom of the listing. 
+
 ### Example
 
 See `linedata-demo.txt` and parcel map `PM1241` in the `data` directory for an example. 

@@ -1,7 +1,7 @@
-[5] Save point 1
+[5] Save point 1 CALC_RW_PM1241
   N: 1929390.126             E: 6074201.714
 
-[6] Begin polyline from point 1
+[6] Begin polyline from point 1 CALC_RW_PM1241
   From N: 1929390.126        E: 6074201.714
 
 [7] Line to NW
@@ -20,7 +20,7 @@
   To N: 1929512.695          E: 6074378.008
   Distance: 76.560           Course: N82°36'00.0"E
 
-[14] Save point XN_ROAD_B
+[14] Save point XN_ROAD_B 
   N: 1929512.695             E: 6074378.008
 
 [17] Tangent curve to Left
@@ -44,7 +44,7 @@
   To N: 1929695.432          E: 6074662.855
   Distance: 25.000           Course: S39°13'20.0"E
 
-[24] Save point 2
+[24] Save point 2 CACL_RW_PAR_1+2_PM1241
   N: 1929695.432             E: 6074662.855
 
 [25] Resume polyline
@@ -71,10 +71,10 @@
 ### Segment is not tangent.
 ### Difference in tangents: 90°00'00.0"
 
-[34] Save point 3
+[34] Save point 3 CALC_RW_PM1241
   N: 1929787.410             E: 6074876.994
 
-[37] Begin polyline from point XN_ROAD_B
+[37] Begin polyline from point XN_ROAD_B 
   From N: 1929512.695        E: 6074378.008
 
 [38] Line to SE
@@ -104,7 +104,7 @@
   Tangent: 8.830             Chord:  17.629         Course: N89°39'37.5"E
   Arc Len: 17.639            Radius: 150.000        Delta:  6°44'15.0"
 
-[46] Save point RB06A
+[46] Save point RB06A 
   N: 1929415.080             E: 6074737.974
 
 [47] Tangent curve to Right
@@ -116,14 +116,14 @@
   To N: 1929403.725          E: 6074793.464
   Distance: 26.190           Course: S75°17'30.0"E
 
-[49] Save point RB07A
+[49] Save point RB07A 
   N: 1929403.725             E: 6074793.464
 
 [50] Line to SE
   To N: 1929396.006          E: 6074822.868
   Distance: 30.400           Course: S75°17'30.0"E
 
-[53] Begin polyline from point 2
+[53] Begin polyline from point 2 CACL_RW_PAR_1+2_PM1241
   From N: 1929695.432        E: 6074662.855
 
 [54] Line to SE
@@ -135,21 +135,21 @@
   To   N: 1929415.080        E: 6074737.974
   Distance: 0.001            Course: S26°34'35.4"W
 
-[58] Begin polyline from point RB07A
+[58] Begin polyline from point RB07A 
   From N: 1929403.725        E: 6074793.464
 
 [59] Line to SE
   To N: 1929269.675          E: 6074818.564
   Distance: 136.380          Course: S10°36'20.0"E
 
-[60] Save point 4
+[60] Save point 4 CALC_PL_PAR_1+2_PM1241
   N: 1929269.675             E: 6074818.564
 
 [61] Line to SW
   To N: 1929241.877          E: 6074770.054
   Distance: 55.910           Course: S60°11'10.0"W
 
-[62] Save point 5
+[62] Save point 5 CALC_PL_PAR_1+2_PM1241
   N: 1929241.877             E: 6074770.054
 
 [63] Line to SE

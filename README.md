@@ -28,27 +28,27 @@ command (case-insensitive) followed by zero or more parameters separated by spac
 
 `BEGIN <point_id>`  
 `BEGIN <northing> <easting>`  
-Start a new polyline at the specified point or northing/easting coordinates.
-
-`<quadrant> <bearing> <distance>`  
-Add a line segment. Quadrants are 1=NE, 2=SE, 3=SW, 4=NW.  
-Bearing is in Degrees-Minutes-Seconds (DD.MMSS). 
-
-`<direction> <delta> <radius>`  
-Add a curve tangent to previous segment. Direction is L=Left, R=Right.  
-Delta is in Degrees-Minutes-Seconds (DDD.MMSS). 
-
-`<direction> <delta> <radius> <quadrant> <bearing>`  
-Add a non-tangent curve segment. Radial quadrant/bearing are from the BC to the RP. 
-
-`<deflection> <delta> <distance>`  
-Add a line segment using a deflection angle. Deflection is DL=Left, DR=Right.  
-Delta is in Degrees-Minutes-Seconds (DDD.MMSS). 
+Start a new polyline at the specified point or coordinates.
 
 `POINT <point_id> LAST <description>`  
 `POINT <point_id> <northing> <easting> <description>`  
 Save the last ployline endpoint or specified coordinates in the points list.  
 `<point_id>` is case insensitive and can contain no spaces. The `<description>` is optional.
+
+`<quadrant> <bearing> <distance>`  
+Add a line segment. `<quadrant>` is 1=NE, 2=SE, 3=SW, 4=NW.  
+`<bearing>` is in Degrees-Minutes-Seconds (DD.MMSS). 
+
+`<direction> <delta> <radius>`  
+Add a curve tangent to previous segment. `<direction>` is L=Left, R=Right.  
+`<delta>` is in Degrees-Minutes-Seconds (DDD.MMSS). 
+
+`<direction> <delta> <radius> <quadrant> <bearing>`  
+Add a non-tangent curve segment. Radial `<quadrant>`/`<bearing>` is from BC to RP. 
+
+`<deflection> <delta> <distance>`  
+Add a line segment using a deflection angle. `<deflection>` is DL=Left, DR=Right.  
+`<delta>` is in Degrees-Minutes-Seconds (DDD.MMSS). 
 
 `BRANCH` - Start a new polyline from the endpoint of the current polyline. 
 
@@ -56,11 +56,11 @@ Save the last ployline endpoint or specified coordinates in the points list.
 
 `UNDO` - Remove the last segment from the current polyline. 
 
-`CLOSE <point_id>` - Calculate closure from endpoint of current polyline to saved point. 
+`CLOSE <point_id>` - Calculate closure from endpoint of current polyline to specified point. 
 
 ### Example
 
-See the `linedata-demo` and parcel map `PM1241` in the `data` directory for an example. 
+See `linedata-demo.txt` and parcel map `PM1241` in the `data` directory for an example. 
 
 ```
 # Alderpoint Rd

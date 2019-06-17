@@ -17,10 +17,10 @@ the line and curve data interactively. The command file approach has a few advan
 
 ### Command language
 
-Each line of a command file describes one segment or auxiliary operation. 
+Each line of a command file describes one polyline segment or auxiliary operation. 
 Blank lines and lines starting with a hash (#) are ignored as comments. 
 A list of polylines and a points list are maintained as the command file 
-is processed. New segments are added to the current polyline, 
+is processed. New segments are added to the end of the current polyline, 
 i.e. the last polyline in the list of polylines. Each non-comment line consists a 
 command (case-insensitive) followed by zero or more parameters separated by space.
 

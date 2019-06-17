@@ -1,590 +1,683 @@
-AP00 - Begin polyline
+[5] Save point 1
+  N: 1928903.218             E: 6072871.037
+
+[6] Begin polyline
   From N: 1928903.218        E: 6072871.037
 
-AP00 - Branch polyline
-  From N: 1928903.218        E: 6072871.037
-
-PL01 - Line to NE
-  To N: 1929386.476          E: 6073604.315
-  Distance: 878.200          Course: N56°36'49.0"E
-
-PL02 - Line to NE
-  To N: 1929397.693          E: 6073628.280
-  Distance: 26.460           Course: N64°55'00.0"E
-
-SR13 - Line to SE
-  To N: 1929341.174          E: 6073683.275
-  Distance: 78.860           Course: S44°13'00.0"E
-
-SR12 - Line to NE
-  To N: 1929399.353          E: 6073795.794
-  Distance: 126.670          Course: N62°39'30.0"E
-
-SR11 - Line to NE
-  To N: 1929463.350          E: 6073960.433
-  Distance: 176.640          Course: N68°45'30.0"E
-
-SR10 - Line to NE
-  To N: 1929521.612          E: 6074019.842
-  Distance: 83.210           Course: N45°33'30.0"E
-
-SR09 - Line to NE
-  To N: 1929729.446          E: 6074098.272
-  Distance: 222.140          Course: N20°40'30.0"E
-
-SR08 - Line to NE
-  To N: 1929882.340          E: 6074218.624
-  Distance: 194.580          Course: N38°12'30.0"E
-
-AP00 - Resume polyline
-  From N: 1928903.218        E: 6072871.037
-
-AP00 - Line to SW
+[7] Line to SW
   To N: 1928884.746          E: 6072854.192
   Distance: 25.000           Course: S42°21'45.0"W
 
-AP20 - Line to SE
+[10] Line to SE
   To N: 1928806.940          E: 6072939.512
   Distance: 115.470          Course: S47°38'15.0"E
 
-AP21 - Tangent curve to Left
+[11] Tangent curve to Left
   To N: 1928756.890          E: 6073031.198
   Tangent: 53.766            Chord:  104.457        Course: S61°22'15.0"E
   Arc Len: 105.464           Radius: 220.000        Delta:  27°28'00.0"
 
-AP22 - Line to SE
+[12] Line to SE
   To N: 1928746.667          E: 6073069.632
   Distance: 39.770           Course: S75°06'15.0"E
 
-AP23 - Tangent curve to Right
+[13] Tangent curve to Right
   To N: 1928692.377          E: 6073175.458
   Tangent: 60.858            Chord:  118.939        Course: S62°50'30.0"E
   Arc Len: 119.852           Radius: 280.000        Delta:  24°31'30.0"
 
-AP24 - Line to SE
+[14] Line to SE
   To N: 1928650.974          E: 6073225.825
   Distance: 65.200           Course: S50°34'45.0"E
 
-AP25 - Tangent curve to Left
+[15] Tangent curve to Left
   To N: 1928571.129          E: 6073386.027
   Tangent: 91.827            Chord:  178.997        Course: S63°30'30.0"E
   Arc Len: 180.525           Radius: 400.000        Delta:  25°51'30.0"
 
-AP26 - Line to SE
+[16] Line to SE
   To N: 1928534.626          E: 6073537.346
   Distance: 155.660          Course: S76°26'15.0"E
 
-AP27 - Tangent curve to Right
+[17] Tangent curve to Right
   To N: 1928450.451          E: 6073646.897
   Tangent: 75.600            Chord:  138.155        Course: S52°27'45.0"E
   Arc Len: 142.271           Radius: 170.000        Delta:  47°57'00.0"
 
-AP28 - Line to SE
+[18] Line to SE
   To N: 1928376.798          E: 6073686.867
   Distance: 83.800           Course: S28°29'15.0"E
 
-AP29A - Tangent curve to Left
+[21] Tangent curve to Left
   To N: 1928357.814          E: 6073700.235
   Tangent: 11.688            Chord:  23.219         Course: S35°09'15.0"E
   Arc Len: 23.271            Radius: 100.000        Delta:  13°20'00.0"
 
-AP29A - Branch polyline
+[22] Branch polyline
   From N: 1928357.814        E: 6073700.235
 
-SL01 - Line to SW
+[23] Line to SW
   To N: 1928327.710          E: 6073695.656
   Distance: 30.450           Course: S8°39'01.0"W
 
-SL02 - Line to SW
-  To N: 1926997.189          E: 6073493.239
-  Distance: 1345.830         Course: S8°39'01.0"W
+[24] Save point 2
+  N: 1928327.710             E: 6073695.656
 
-SL03 - Line to NE
-  To N: 1927044.117          E: 6074845.725
-  Distance: 1353.300         Course: N88°00'46.0"E
-
-SL04 - Line to NE
-  To N: 1927091.045          E: 6076198.211
-  Distance: 1353.300         Course: N88°00'46.0"E
-
-SL05 - Line to NE
-  To N: 1929597.259          E: 6076615.035
-  Distance: 2540.640         Course: N9°26'34.0"E
-
-AP29A - Resume polyline
+[25] Resume polyline
   From N: 1928357.814        E: 6073700.235
 
-AP29A - Delete segment
+[26] Delete segment
 
-AP29 - Tangent curve to Left
+[29] Tangent curve to Left
   To N: 1928338.901          E: 6073826.468
   Tangent: 104.735           Chord:  144.654        Course: S74°48'45.0"E
   Arc Len: 161.705           Radius: 100.000        Delta:  92°39'00.0"
 
-AP30 - Line to NE
+[30] Line to NE
   To N: 1928399.830          E: 6073927.322
   Distance: 117.830          Course: N58°51'45.0"E
 
-AP31 - Tangent curve to Left
+[31] Tangent curve to Left
   To N: 1928539.081          E: 6073970.772
   Tangent: 97.434            Chord:  145.872        Course: N17°19'45.0"E
   Arc Len: 159.477           Radius: 110.000        Delta:  83°04'00.0"
 
-AP31 - Branch polyline
+[34] Branch polyline
   From N: 1928539.081        E: 6073970.772
 
-PL01 - Line to NE
+[35] Line to NE
   To N: 1928549.331          E: 6073993.574
   Distance: 25.000           Course: N65°47'45.0"E
 
-PL02 - Line to SE
+[36] Save point 3
+  N: 1928549.331             E: 6073993.574
+
+[37] Line to SE
   To N: 1928296.529          E: 6074421.964
   Distance: 497.420          Course: S59°27'15.0"E
 
-AP31 - Resume polyline
+[38] Resume polyline
   From N: 1928539.081        E: 6073970.772
 
-AP32 - Line to NW
+[41] Line to NW
   To N: 1928623.541          E: 6073932.807
   Distance: 92.600           Course: N24°12'15.0"W
 
-AP33 - Tangent curve to Right
+[42] Tangent curve to Right
   To N: 1928790.057          E: 6073948.126
   Tangent: 96.026            Chord:  167.220        Course: N5°15'22.5"E
   Arc Len: 174.822           Radius: 170.000        Delta:  58°55'15.0"
 
-AP34 - Line to NE
+[43] Line to NE
   To N: 1928855.503          E: 6073993.471
   Distance: 79.620           Course: N34°43'00.0"E
 
-AP35 - Tangent curve to Left
+[44] Tangent curve to Left
   To N: 1928949.396          E: 6074033.229
   Tangent: 52.076            Chord:  101.963        Course: N22°57'00.0"E
   Arc Len: 102.684           Radius: 250.000        Delta:  23°32'00.0"
 
-AP36 - Line to NE
+[45] Line to NE
   To N: 1929019.155          E: 6074047.021
   Distance: 71.110           Course: N11°11'00.0"E
 
-AP37 - Tangent curve to Right
+[46] Tangent curve to Right
   To N: 1929097.172          E: 6074070.929
   Tangent: 41.013            Chord:  81.597         Course: N17°02'15.0"E
   Arc Len: 81.740            Radius: 400.000        Delta:  11°42'30.0"
 
-AP38 - Line to NE
+[47] Line to NE
   To N: 1929210.872          E: 6074118.938
   Distance: 123.420          Course: N22°53'30.0"E
 
-AP39 - Tangent curve to Left
+[48] Tangent curve to Left
   To N: 1929256.166          E: 6074135.267
   Tangent: 24.109            Chord:  48.148         Course: N19°49'30.0"E
   Arc Len: 48.171            Radius: 450.000        Delta:  6°08'00.0"
 
-AP40 - Line to NE
+[49] Line to NE
   To N: 1929397.335          E: 6074177.777
   Distance: 147.430          Course: N16°45'30.0"E
 
-AP41 - Tangent curve to Right
+[50] Tangent curve to Right
   To N: 1929502.835          E: 6074302.087
   Tangent: 97.117            Chord:  163.044        Course: N49°40'45.0"E
   Arc Len: 172.373           Radius: 150.000        Delta:  65°50'30.0"
 
-AP42 - Line to NE
+[51] Line to NE
   To N: 1929512.696          E: 6074378.009
   Distance: 76.560           Course: N82°36'00.0"E
 
-AP42 - Branch polyline
-  From N: 1929512.696        E: 6074378.009
+[54] Save point XN_ROAD_B
+  N: 1929512.696             E: 6074378.009
 
-RB01 - Line to SE
-  To N: 1929486.882          E: 6074381.362
-  Distance: 26.030           Course: S7°24'00.0"E
-
-RB02 - Tangent curve to Left
-  To N: 1929450.399          E: 6074394.528
-  Tangent: 19.860            Chord:  38.787         Course: S19°50'37.5"E
-  Arc Len: 39.093            Radius: 90.000         Delta:  24°53'15.0"
-
-RB03 - Line to SE
-  To N: 1929428.723          E: 6074408.224
-  Distance: 25.640           Course: S32°17'15.0"E
-
-RB04 - Tangent curve to Left
-  To N: 1929398.580          E: 6074467.378
-  Tangent: 38.610            Chord:  66.391         Course: S62°59'52.5"E
-  Arc Len: 69.680            Radius: 65.000         Delta:  61°25'15.0"
-
-RB05 - Line to NE
-  To N: 1929414.976          E: 6074720.347
-  Distance: 253.500          Course: N86°17'30.0"E
-
-RB06A - Tangent curve to Right
-  To N: 1929415.081          E: 6074737.975
-  Tangent: 8.830             Chord:  17.629         Course: N89°39'37.5"E
-  Arc Len: 17.639            Radius: 150.000        Delta:  6°44'15.0"
-
-RB06B - Tangent curve to Right
-  To N: 1929410.375          E: 6074768.133
-  Tangent: 15.341            Chord:  30.523         Course: S81°07'52.5"E
-  Arc Len: 30.576            Radius: 150.000        Delta:  11°40'45.0"
-
-RB07A - Line to SE
-  To N: 1929403.725          E: 6074793.465
-  Distance: 26.190           Course: S75°17'30.0"E
-
-RB07B - Line to SE
-  To N: 1929396.007          E: 6074822.869
-  Distance: 30.400           Course: S75°17'30.0"E
-
-AP42 - Resume polyline
-  From N: 1929512.696        E: 6074378.009
-
-AP43A - Tangent curve to Left
+[57] Tangent curve to Left
   To N: 1929532.403          E: 6074449.885
   Tangent: 37.624            Chord:  74.529         Course: N74°40'01.0"E
   Arc Len: 74.767            Radius: 270.000        Delta:  15°51'58.0"
 
-AP43A - Branch polyline
-  From N: 1929532.403        E: 6074449.885
+[58] Save point XN_SAWMILL
+  N: 1929532.403             E: 6074449.885
 
-SR01 - Line to NE
-  To N: 1929659.465          E: 6074542.172
-  Distance: 157.040          Course: N35°59'30.0"E
+[59] Delete segment
 
-SR02 - Line to NW
-  To N: 1929718.129          E: 6074507.765
-  Distance: 68.010           Course: N30°23'30.0"W
-
-SR03 - Line to SW
-  To N: 1929687.681          E: 6074409.505
-  Distance: 102.870          Course: S72°47'00.0"W
-
-SR04 - Line to NW
-  To N: 1929723.734          E: 6074360.064
-  Distance: 61.190           Course: N53°54'00.0"W
-
-SR05 - Line to NE
-  To N: 1929801.034          E: 6074393.648
-  Distance: 84.280           Course: N23°29'00.0"E
-
-SR06 - Line to NW
-  To N: 1929860.262          E: 6074355.612
-  Distance: 70.390           Course: N32°42'30.0"W
-
-SR07 - Line to NW
-  To N: 1929882.367          E: 6074218.624
-  Distance: 138.760          Course: N80°50'00.0"W
-
-PM993_SR08 - Closure
-  From N: 1929882.367        E: 6074218.624
-  To   N: 1929882.340        E: 6074218.624
-  Distance: 0.027            Course: S0°19'23.7"E
-
-PL01 - Line to NW
-  To N: 1929895.561          E: 6074204.333
-  Distance: 19.450           Course: N47°17'15.0"W
-
-AP43A - Resume polyline
-  From N: 1929532.403        E: 6074449.885
-
-AP43A - Delete segment
-
-AP43 - Tangent curve to Left
+[62] Tangent curve to Left
   To N: 1929604.857          E: 6074548.340
   Tangent: 103.733           Chord:  193.665        Course: N61°35'00.0"E
   Arc Len: 198.077           Radius: 270.000        Delta:  42°02'00.0"
 
-AP44 - Line to NE
+[63] Line to NE
   To N: 1929687.439          E: 6074619.037
   Distance: 108.710          Course: N40°34'00.0"E
 
-AP45A - Tangent curve to Right
+[66] Tangent curve to Right
   To N: 1929714.799          E: 6074647.048
   Tangent: 19.656            Chord:  39.156         Course: N45°40'20.0"E
   Arc Len: 39.208            Radius: 220.000        Delta:  10°12'40.0"
 
-AP45A - Branch polyline
+[67] Branch polyline
   From N: 1929714.799        E: 6074647.048
 
-PL01 - Line to SE
+[68] Line to SE
   To N: 1929695.432          E: 6074662.856
   Distance: 25.000           Course: S39°13'20.0"E
 
-PL02 - Line to SE
-  To N: 1929415.081          E: 6074737.976
-  Distance: 290.240          Course: S15°00'00.0"E
+[69] Save point 4
+  N: 1929695.432             E: 6074662.856
 
-PM1241_RB06A - Closure
-  From N: 1929415.081        E: 6074737.976
-  To   N: 1929415.081        E: 6074737.975
-  Distance: 0.001            Course: S26°34'35.4"W
-
-AP45A - Resume polyline
+[70] Resume polyline
   From N: 1929714.799        E: 6074647.048
 
-AP45A - Delete segment
+[71] Delete segment
 
-AP45 - Tangent curve to Right
+[74] Tangent curve to Right
   To N: 1929745.182          E: 6074696.313
   Tangent: 49.436            Chord:  96.467         Course: N53°13'52.5"E
   Arc Len: 97.257            Radius: 220.000        Delta:  25°19'45.0"
 
-AP46 - Line to NE
+[75] Line to NE
   To N: 1929787.570          E: 6074791.053
   Distance: 103.790          Course: N65°53'45.0"E
 
-AP47 - Tangent curve to Right
+[76] Tangent curve to Right
   To N: 1929812.088          E: 6074872.992
   Tangent: 43.128            Chord:  85.529         Course: N73°20'30.0"E
   Arc Len: 85.770            Radius: 330.000        Delta:  14°53'30.0"
 
-AP48 - Line to NE
+[77] Line to NE
   To N: 1929818.676          E: 6074913.611
   Distance: 41.150           Course: N80°47'15.0"E
 
-AP49 - Tangent curve to Left
+[78] Tangent curve to Left
   To N: 1929848.834          E: 6074999.671
   Tangent: 46.313            Chord:  91.191         Course: N70°41'15.0"E
   Arc Len: 91.665            Radius: 260.000        Delta:  20°12'00.0"
 
-AP50 - Line to NE
+[79] Line to NE
   To N: 1929902.133          E: 6075094.212
   Distance: 108.530          Course: N60°35'15.0"E
 
-AP51 - Tangent curve to Right
+[80] Tangent curve to Right
   To N: 1929940.221          E: 6075222.899
   Tangent: 68.847            Chord:  134.205        Course: N73°30'45.0"E
   Arc Len: 135.350           Radius: 300.000        Delta:  25°51'00.0"
 
-AP52 - Line to NE
+[81] Line to NE
   To N: 1929949.850          E: 6075377.559
   Distance: 154.960          Course: N86°26'15.0"E
 
-AP53 - Tangent curve to Right
+[82] Tangent curve to Right
   To N: 1929937.022          E: 6075509.822
   Tangent: 67.289            Chord:  132.883        Course: S84°27'37.5"E
   Arc Len: 133.444           Radius: 420.000        Delta:  18°12'15.0"
 
-AP54 - Line to SE
+[83] Line to SE
   To N: 1929892.898          E: 6075678.713
   Distance: 174.560          Course: S75°21'30.0"E
 
-AP54 - Branch polyline
+[86] Branch polyline
   From N: 1929892.898        E: 6075678.713
 
-PL01 - Line to NE
+[87] Line to NE
   To N: 1929917.086          E: 6075685.032
   Distance: 25.000           Course: N14°38'30.0"E
 
-PL02 - Line to NE
-  To N: 1930986.110          E: 6075826.858
-  Distance: 1078.390         Course: N7°33'26.0"E
+[88] Save point 5
+  N: 1929917.086             E: 6075685.032
 
-PL03 - Line to SE
-  To N: 1930820.528          E: 6076801.665
-  Distance: 988.770          Course: S80°21'35.0"E
-
-AP54 - Resume polyline
+[89] Resume polyline
   From N: 1929892.898        E: 6075678.713
 
-AP55 - Tangent curve to Right
+[92] Tangent curve to Right
   To N: 1929843.059          E: 6075767.299
   Tangent: 52.547            Chord:  101.644        Course: S60°38'15.0"E
   Arc Len: 102.771           Radius: 200.000        Delta:  29°26'30.0"
 
-AP56 - Line to SE
+[93] Line to SE
   To N: 1929813.721          E: 6075797.591
   Distance: 42.170           Course: S45°55'00.0"E
 
-AP57 - Tangent curve to Left
+[94] Tangent curve to Left
   To N: 1929754.706          E: 6075879.430
   Tangent: 50.981            Chord:  100.898        Course: S54°12'15.0"E
   Arc Len: 101.251           Radius: 350.000        Delta:  16°34'30.0"
 
-AP58 - Line to SE
+[95] Line to SE
   To N: 1929689.586          E: 6076004.480
   Distance: 140.990          Course: S62°29'30.0"E
 
-AP59 - Tangent curve to Left
+[96] Tangent curve to Left
   To N: 1929674.274          E: 6076189.727
   Tangent: 100.805           Chord:  185.879        Course: S85°16'30.0"E
   Arc Len: 190.869           Radius: 240.000        Delta:  45°34'00.0"
 
-AP60 - Line to NE
+[97] Line to NE
   To N: 1929702.601          E: 6076276.606
   Distance: 91.380           Course: N71°56'30.0"E
 
-AP61 - Tangent curve to Right
+[98] Tangent curve to Right
   To N: 1929713.089          E: 6076399.162
   Tangent: 63.162            Chord:  123.004        Course: N85°06'30.0"E
   Arc Len: 124.093           Radius: 270.000        Delta:  26°20'00.0"
 
-AP62 - Line to SE
+[99] Line to SE
   To N: 1929700.014          E: 6076489.066
   Distance: 90.850           Course: S81°43'30.0"E
 
-AP63 - Tangent curve to Left
+[100] Tangent curve to Left
   To N: 1929729.952          E: 6076626.400
   Tangent: 75.067            Chord:  140.560        Course: N77°42'07.5"E
   Arc Len: 143.626           Radius: 200.000        Delta:  41°08'45.0"
 
-AP64A - Line to NE
+[103] Line to NE
   To N: 1929737.687          E: 6076638.369
   Distance: 14.250           Course: N57°07'45.0"E
 
-AP64A - Branch polyline
+[104] Branch polyline
   From N: 1929737.687        E: 6076638.369
 
-SL07 - Line to SW
+[105] Line to SW
   To N: 1929704.532          E: 6076632.855
   Distance: 33.610           Course: S9°26'34.0"W
 
-SL06 - Line to SW
+[106] Save point 6
+  N: 1929704.532             E: 6076632.855
+
+[107] Line to SW
   To N: 1929597.236          E: 6076615.009
   Distance: 108.770          Course: S9°26'34.0"W
 
-PM837_SL05 - Closure
-  From N: 1929597.236        E: 6076615.009
-  To   N: 1929597.259        E: 6076615.035
-  Distance: 0.035            Course: N47°14'32.9"E
+[108] Save point 7
+  N: 1929597.236             E: 6076615.009
 
-AP64A - Resume polyline
+[109] Resume polyline
   From N: 1929737.687        E: 6076638.369
 
-AP64A - Delete segment
+[110] Delete segment
 
-AP64 - Line to NE
+[113] Line to NE
   To N: 1929798.295          E: 6076732.160
   Distance: 125.920          Course: N57°07'45.0"E
 
-AP65 - Tangent curve to Left
+[114] Tangent curve to Left
   To N: 1929858.508          E: 6076805.204
   Tangent: 47.650            Chord:  94.663         Course: N50°30'00.0"E
   Arc Len: 94.875            Radius: 410.000        Delta:  13°15'30.0"
 
-AP66 - Line to NE
+[115] Line to NE
   To N: 1929908.971          E: 6076853.717
   Distance: 70.000           Course: N43°52'15.0"E
 
-AP67 - Tangent curve to Right
+[116] Tangent curve to Right
   To N: 1929938.224          E: 6076892.890
   Tangent: 24.776            Chord:  48.890         Course: N53°15'00.0"E
   Arc Len: 49.109            Radius: 150.000        Delta:  18°45'30.0"
 
-AP68A - Line to NE
+[119] Line to NE
   To N: 1929968.429          E: 6076951.235
   Distance: 65.700           Course: N62°37'45.0"E
 
-AP68A - Branch polyline
-  From N: 1929968.429        E: 6076951.235
+[120] Save point XN_MAIN
+  N: 1929968.429             E: 6076951.235
 
-MD01 - Line to NW
-  To N: 1930042.963          E: 6076949.706
-  Distance: 74.550           Course: N1°10'30.0"W
+[121] Delete segment
 
-MD01 - Branch polyline
-  From N: 1930042.963        E: 6076949.706
-
-SR165 - Line to NE
-  To N: 1930080.674          E: 6077052.476
-  Distance: 109.470          Course: N69°51'00.0"E
-
-MD01 - Resume polyline
-  From N: 1930042.963        E: 6076949.706
-
-MD02 - Line to NW
-  To N: 1930084.993          E: 6076883.287
-  Distance: 78.600           Course: N57°40'30.0"W
-
-MD03 - Line to NW
-  To N: 1930329.295          E: 6076763.318
-  Distance: 272.170          Course: N26°09'15.0"W
-
-MD04 - Line to NE
-  To N: 1930451.576          E: 6076774.706
-  Distance: 122.810          Course: N5°19'15.0"E
-
-MD05 - Line to NE
-  To N: 1930582.481          E: 6076779.688
-  Distance: 131.000          Course: N2°10'45.0"E
-
-MD06 - Line to NE
-  To N: 1930825.148          E: 6076838.787
-  Distance: 249.760          Course: N13°41'15.0"E
-
-PL05 - Line to SW
-  To N: 1930818.861          E: 6076811.523
-  Distance: 27.980           Course: S77°00'52.0"W
-
-PL04 - Line to NW
-  To N: 1930820.536          E: 6076801.664
-  Distance: 10.000           Course: N80°21'35.0"W
-
-PM993_PL03 - Closure
-  From N: 1930820.536        E: 6076801.664
-  To   N: 1930820.528        E: 6076801.665
-  Distance: 0.008            Course: S9°24'30.4"E
-
-AP68A - Resume polyline
-  From N: 1929968.429        E: 6076951.235
-
-AP68A - Delete segment
-
-AP68 - Line to NE
+[124] Line to NE
   To N: 1929975.436          E: 6076964.769
   Distance: 80.940           Course: N62°37'45.0"E
 
-AP69 - Tangent curve to Right
+[125] Tangent curve to Right
   To N: 1929928.454          E: 6077089.901
   Tangent: 99.780            Chord:  133.661        Course: S69°25'15.0"E
   Arc Len: 150.639           Radius: 90.000         Delta:  95°54'00.0"
 
-PL00 - Line to NE
+[128] Line to NE
   To N: 1929937.604          E: 6077113.166
   Distance: 25.000           Course: N68°31'45.0"E
 
-PM1241_RB07A - Begin polyline
+### Segment is not tangent.
+### Difference in tangents: -90°00'00.0"
+
+[129] Save point 8
+  N: 1929937.604             E: 6077113.166
+
+[132] Begin polyline
+  From N: 1929968.429        E: 6076951.235
+
+[133] Line to NW
+  To N: 1930042.963          E: 6076949.706
+  Distance: 74.550           Course: N1°10'30.0"W
+
+[134] Branch polyline
+  From N: 1930042.963        E: 6076949.706
+
+[135] Line to NE
+  To N: 1930080.674          E: 6077052.476
+  Distance: 109.470          Course: N69°51'00.0"E
+
+[136] Resume polyline
+  From N: 1930042.963        E: 6076949.706
+
+[137] Line to NW
+  To N: 1930084.993          E: 6076883.287
+  Distance: 78.600           Course: N57°40'30.0"W
+
+[138] Line to NW
+  To N: 1930329.295          E: 6076763.318
+  Distance: 272.170          Course: N26°09'15.0"W
+
+[139] Line to NE
+  To N: 1930451.576          E: 6076774.706
+  Distance: 122.810          Course: N5°19'15.0"E
+
+[140] Line to NE
+  To N: 1930582.481          E: 6076779.688
+  Distance: 131.000          Course: N2°10'45.0"E
+
+[141] Line to NE
+  To N: 1930825.148          E: 6076838.787
+  Distance: 249.760          Course: N13°41'15.0"E
+
+[144] Line to SW
+  To N: 1930818.861          E: 6076811.523
+  Distance: 27.980           Course: S77°00'52.0"W
+
+[145] Line to NW
+  To N: 1930820.536          E: 6076801.664
+  Distance: 10.000           Course: N80°21'35.0"W
+
+[146] Save point 9
+  N: 1930820.536             E: 6076801.664
+
+[147] Line to NW
+  To N: 1930986.117          E: 6075826.857
+  Distance: 988.770          Course: N80°21'35.0"W
+
+[148] Save point CLOSE01
+  N: 1930986.117             E: 6075826.857
+
+[149] Begin polyline
+  From N: 1929917.086        E: 6075685.032
+
+[150] Line to NE
+  To N: 1930986.110          E: 6075826.858
+  Distance: 1078.390         Course: N7°33'26.0"E
+
+[151] Closure to CLOSE01
+  From N: 1930986.110        E: 6075826.858
+  To   N: 1930986.117        E: 6075826.857
+  Distance: 0.008            Course: N9°24'30.4"W
+
+[154] Begin polyline
+  From N: 1928327.710        E: 6073695.656
+
+[155] Line to SW
+  To N: 1926997.189          E: 6073493.239
+  Distance: 1345.830         Course: S8°39'01.0"W
+
+[156] Line to NE
+  To N: 1927044.117          E: 6074845.725
+  Distance: 1353.300         Course: N88°00'46.0"E
+
+[157] Line to NE
+  To N: 1927091.045          E: 6076198.211
+  Distance: 1353.300         Course: N88°00'46.0"E
+
+[158] Save point CLOSE02
+  N: 1927091.045             E: 6076198.211
+
+[159] Begin polyline
+  From N: 1929597.236        E: 6076615.009
+
+[160] Line to SW
+  To N: 1927091.022          E: 6076198.186
+  Distance: 2540.640         Course: S9°26'34.0"W
+
+[161] Closure to CLOSE02
+  From N: 1927091.022        E: 6076198.186
+  To   N: 1927091.045        E: 6076198.211
+  Distance: 0.035            Course: N47°14'32.9"E
+
+[164] Begin polyline
+  From N: 1929532.403        E: 6074449.885
+
+[165] Line to NE
+  To N: 1929659.465          E: 6074542.172
+  Distance: 157.040          Course: N35°59'30.0"E
+
+[166] Line to NW
+  To N: 1929718.129          E: 6074507.765
+  Distance: 68.010           Course: N30°23'30.0"W
+
+[167] Line to SW
+  To N: 1929687.681          E: 6074409.505
+  Distance: 102.870          Course: S72°47'00.0"W
+
+[168] Line to NW
+  To N: 1929723.734          E: 6074360.064
+  Distance: 61.190           Course: N53°54'00.0"W
+
+[169] Line to NE
+  To N: 1929801.034          E: 6074393.648
+  Distance: 84.280           Course: N23°29'00.0"E
+
+[170] Line to NW
+  To N: 1929860.262          E: 6074355.612
+  Distance: 70.390           Course: N32°42'30.0"W
+
+[171] Line to NW
+  To N: 1929882.367          E: 6074218.624
+  Distance: 138.760          Course: N80°50'00.0"W
+
+[174] Save point CLOSE03
+  N: 1929882.367             E: 6074218.624
+
+[175] Line to NW
+  To N: 1929895.561          E: 6074204.333
+  Distance: 19.450           Course: N47°17'15.0"W
+
+[176] Save point 10
+  N: 1929895.561             E: 6074204.333
+
+[179] Begin polyline
+  From N: 1928903.218        E: 6072871.037
+
+[180] Line to NE
+  To N: 1929386.476          E: 6073604.315
+  Distance: 878.200          Course: N56°36'49.0"E
+
+[183] Save point 11
+  N: 1929386.476             E: 6073604.315
+
+[184] Line to NE
+  To N: 1929397.693          E: 6073628.280
+  Distance: 26.460           Course: N64°55'00.0"E
+
+[185] Line to SE
+  To N: 1929341.174          E: 6073683.275
+  Distance: 78.860           Course: S44°13'00.0"E
+
+[186] Line to NE
+  To N: 1929399.353          E: 6073795.794
+  Distance: 126.670          Course: N62°39'30.0"E
+
+[187] Line to NE
+  To N: 1929463.350          E: 6073960.433
+  Distance: 176.640          Course: N68°45'30.0"E
+
+[188] Line to NE
+  To N: 1929521.612          E: 6074019.842
+  Distance: 83.210           Course: N45°33'30.0"E
+
+[189] Line to NE
+  To N: 1929729.446          E: 6074098.272
+  Distance: 222.140          Course: N20°40'30.0"E
+
+[190] Line to NE
+  To N: 1929882.340          E: 6074218.624
+  Distance: 194.580          Course: N38°12'30.0"E
+
+[191] Closure to CLOSE03
+  From N: 1929882.340        E: 6074218.624
+  To   N: 1929882.367        E: 6074218.624
+  Distance: 0.027            Course: N0°19'23.7"W
+
+[194] Begin polyline
+  From N: 1929512.696        E: 6074378.009
+
+[195] Line to SE
+  To N: 1929486.882          E: 6074381.362
+  Distance: 26.030           Course: S7°24'00.0"E
+
+[196] Tangent curve to Left
+  To N: 1929450.399          E: 6074394.528
+  Tangent: 19.860            Chord:  38.787         Course: S19°50'37.5"E
+  Arc Len: 39.093            Radius: 90.000         Delta:  24°53'15.0"
+
+[197] Line to SE
+  To N: 1929428.723          E: 6074408.224
+  Distance: 25.640           Course: S32°17'15.0"E
+
+[198] Tangent curve to Left
+  To N: 1929398.580          E: 6074467.378
+  Tangent: 38.610            Chord:  66.391         Course: S62°59'52.5"E
+  Arc Len: 69.680            Radius: 65.000         Delta:  61°25'15.0"
+
+[199] Line to NE
+  To N: 1929414.976          E: 6074720.347
+  Distance: 253.500          Course: N86°17'30.0"E
+
+[202] Tangent curve to Right
+  To N: 1929415.081          E: 6074737.975
+  Tangent: 8.830             Chord:  17.629         Course: N89°39'37.5"E
+  Arc Len: 17.639            Radius: 150.000        Delta:  6°44'15.0"
+
+[203] Save point RB06A
+  N: 1929415.081             E: 6074737.975
+
+[204] Tangent curve to Right
+  To N: 1929410.375          E: 6074768.133
+  Tangent: 15.341            Chord:  30.523         Course: S81°07'52.5"E
+  Arc Len: 30.576            Radius: 150.000        Delta:  11°40'45.0"
+
+[205] Line to SE
+  To N: 1929403.725          E: 6074793.465
+  Distance: 26.190           Course: S75°17'30.0"E
+
+[206] Save point RB07A
+  N: 1929403.725             E: 6074793.465
+
+[207] Line to SE
+  To N: 1929396.007          E: 6074822.869
+  Distance: 30.400           Course: S75°17'30.0"E
+
+[210] Begin polyline
+  From N: 1929695.432        E: 6074662.856
+
+[211] Line to SE
+  To N: 1929415.081          E: 6074737.976
+  Distance: 290.240          Course: S15°00'00.0"E
+
+[212] Closure to RB06A
+  From N: 1929415.081        E: 6074737.976
+  To   N: 1929415.081        E: 6074737.975
+  Distance: 0.001            Course: S26°34'35.4"W
+
+[215] Begin polyline
   From N: 1929403.725        E: 6074793.465
 
-FL01 - Line to SE
+[216] Line to SE
   To N: 1929269.675          E: 6074818.565
   Distance: 136.380          Course: S10°36'20.0"E
 
-FL02 - Line to SW
+[217] Save point 12
+  N: 1929269.675             E: 6074818.565
+
+[218] Line to SW
   To N: 1929241.877          E: 6074770.055
   Distance: 55.910           Course: S60°11'10.0"W
 
-FL03 - Line to SE
+[219] Save point 13
+  N: 1929241.877             E: 6074770.055
+
+[220] Line to SE
   To N: 1928901.167          E: 6074866.949
   Distance: 354.220          Course: S15°52'30.0"E
 
-FL04 - Line to NE
+[221] Line to NE
   To N: 1928932.689          E: 6075088.548
   Distance: 223.830          Course: N81°54'15.0"E
 
-FL05 - Line to NE
+[222] Line to NE
   To N: 1929007.950          E: 6075226.698
   Distance: 157.320          Course: N61°25'10.0"E
 
-FL06 - Line to SE
+[223] Line to SE
   To N: 1928981.933          E: 6075526.832
   Distance: 301.260          Course: S85°02'45.0"E
 
-FL07 - Line to SW
+[224] Line to SW
   To N: 1928801.558          E: 6075512.553
   Distance: 180.940          Course: S4°31'35.0"W
 
-FL08 - Line to SW
+[225] Line to SW
   To N: 1928695.043          E: 6075477.481
   Distance: 112.140          Course: S18°13'30.0"W
 
-FL09 - Line to SE
+[226] Branch polyline
+  From N: 1928695.043        E: 6075477.481
+
+[227] Line to SE
   To N: 1928649.160          E: 6075580.374
   Distance: 112.660          Course: S65°58'00.0"E
 
-PM1241_FL08 - Begin polyline
+[228] Resume polyline
   From N: 1928695.043        E: 6075477.481
 
-PL01 - Line to SW
+[229] Line to SW
   To N: 1928621.706          E: 6075453.334
   Distance: 77.210           Course: S18°13'30.0"W
+
+Points listing
+
+1,1928903.2180,6072871.0370,0.0000,
+2,1928327.7103,6073695.6557,0.0000,
+3,1928549.3312,6073993.5742,0.0000,
+4,1929695.4318,6074662.8560,0.0000,
+5,1929917.0864,6075685.0323,0.0000,
+6,1929704.5319,6076632.8546,0.0000,
+7,1929597.2358,6076615.0095,0.0000,
+8,1929937.6044,6077113.1657,0.0000,
+9,1930820.5358,6076801.6640,0.0000,
+10,1929895.5607,6074204.3327,0.0000,
+11,1929386.4760,6073604.3152,0.0000,
+12,1929269.6749,6074818.5654,0.0000,
+13,1929241.8773,6074770.0554,0.0000,
+CLOSE01,1930986.1171,6075826.8569,0.0000,
+CLOSE02,1927091.0451,6076198.2112,0.0000,
+CLOSE03,1929882.3674,6074218.6239,0.0000,
+RB06A,1929415.0806,6074737.9752,0.0000,
+RB07A,1929403.7252,6074793.4651,0.0000,
+XN_MAIN,1929968.4291,6076951.2350,0.0000,
+XN_ROAD_B,1929512.6956,6074378.0091,0.0000,
+XN_SAWMILL,1929532.4031,6074449.8849,0.0000,

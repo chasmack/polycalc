@@ -1,90 +1,114 @@
-PT01 - Begin polyline
+[4] Save point 1
+  N: 2062767.928             E: 6080782.680
+
+[5] Save point 2
+  N: 2061762.872             E: 6082984.953
+
+[8] Begin polyline
   From N: 2062767.928        E: 6080782.680
 
-RW01 - Line to SE
+[9] Line to SE
   To N: 2062621.664          E: 6080938.812
   Distance: 213.940          Course: S46°52'09.0"E
 
-RW02A - Line to SE
+[10] Line to SE
   To N: 2062322.671          E: 6081096.999
   Distance: 338.260          Course: S27°52'54.0"E
 
-RW02A - Branch polyline
-  From N: 2062322.671        E: 6081096.999
+[11] Save point 3
+  N: 2062322.671             E: 6081096.999
 
-PL01 - Line to SW
-  To N: 2060879.051          E: 6080738.491
-  Distance: 1487.470         Course: S13°56'48.0"W
-
-PL01 - Branch polyline
-  From N: 2060879.051        E: 6080738.491
-
-PL01A - Line to NW
-  To N: 2061209.946          E: 6079589.509
-  Distance: 1195.680         Course: N73°56'03.0"W
-
-PL01 - Resume polyline
-  From N: 2060879.051        E: 6080738.491
-
-PL02 - Line to SE
-  To N: 2060703.320          E: 6081348.690
-  Distance: 635.000          Course: S73°56'03.0"E
-
-PL02 - Branch polyline
-  From N: 2060703.320        E: 6081348.690
-
-PL02A - Line to SE
-  To N: 2060385.897          E: 6082450.893
-  Distance: 1147.000         Course: S73°56'03.0"E
-
-PL02 - Resume polyline
-  From N: 2060703.320        E: 6081348.690
-
-PL03 - Line to NE
-  To N: 2062188.760          E: 6081717.584
-  Distance: 1530.560         Course: N13°56'48.0"E
-
-RW02A - Resume polyline
-  From N: 2062322.671        E: 6081096.999
-
-RW02B - Line to SE
+[12] Line to SE
   To N: 2062170.081          E: 6081177.728
   Distance: 172.630          Course: S27°52'54.0"E
 
-RW03 - Line to NE
+[13] Line to NE
   To N: 2062179.947          E: 6081624.840
   Distance: 447.220          Course: N88°44'09.0"E
 
-RW04A - Line to NE
+[14] Line to NE
   To N: 2062188.767          E: 6081717.581
   Distance: 93.160           Course: N84°34'04.0"E
 
-PL03 - Closure
-  From N: 2062188.767        E: 6081717.581
-  To   N: 2062188.760        E: 6081717.584
-  Distance: 0.007            Course: S20°05'44.6"E
+[15] Save point 4
+  N: 2062188.767             E: 6081717.581
 
-RW04B - Line to NE
+[16] Line to NE
   To N: 2062200.781          E: 6081843.921
   Distance: 126.910          Course: N84°34'04.0"E
 
-RW05 - Line to SE
+[17] Line to SE
   To N: 2062089.400          E: 6081942.062
   Distance: 148.450          Course: S41°23'02.0"E
 
-RW06 - Line to NE
+[18] Line to NE
   To N: 2062226.747          E: 6082322.742
   Distance: 404.700          Course: N70°09'39.0"E
 
-RW07 - Line to SE
+[19] Line to SE
   To N: 2062050.704          E: 6082483.753
   Distance: 238.570          Course: S42°26'47.0"E
 
-RW08 - Line to SE
+[20] Line to SE
   To N: 2061762.875          E: 6082984.933
   Distance: 577.950          Course: S60°07'52.0"E
 
-PT02 - Closure
+[21] Closure to 2
   From N: 2061762.875        E: 6082984.933
   To   N: 2061762.872        E: 6082984.953
   Distance: 0.021            Course: S81°18'56.6"E
+
+[24] Begin polyline
+  From N: 2062322.671        E: 6081096.999
+
+[25] Line to SW
+  To N: 2060879.051          E: 6080738.491
+  Distance: 1487.470         Course: S13°56'48.0"W
+
+[26] Save point 5
+  N: 2060879.051             E: 6080738.491
+
+[27] Branch polyline
+  From N: 2060879.051        E: 6080738.491
+
+[28] Line to NW
+  To N: 2061209.946          E: 6079589.509
+  Distance: 1195.680         Course: N73°56'03.0"W
+
+[29] Resume polyline
+  From N: 2060879.051        E: 6080738.491
+
+[30] Line to SE
+  To N: 2060703.320          E: 6081348.690
+  Distance: 635.000          Course: S73°56'03.0"E
+
+[31] Save point 6
+  N: 2060703.320             E: 6081348.690
+
+[32] Branch polyline
+  From N: 2060703.320        E: 6081348.690
+
+[33] Line to SE
+  To N: 2060385.897          E: 6082450.893
+  Distance: 1147.000         Course: S73°56'03.0"E
+
+[34] Resume polyline
+  From N: 2060703.320        E: 6081348.690
+
+[35] Line to NE
+  To N: 2062188.760          E: 6081717.584
+  Distance: 1530.560         Course: N13°56'48.0"E
+
+[36] Closure to 4
+  From N: 2062188.760        E: 6081717.584
+  To   N: 2062188.767        E: 6081717.581
+  Distance: 0.007            Course: N20°05'44.6"W
+
+Points listing
+
+1,2062767.9280,6080782.6800,0.0000,CALC_RW_22RS97
+2,2061762.8720,6082984.9530,0.0000,CALC_RW_22RS97
+3,2062322.6712,6081096.9985,0.0000,CALC_NW_LOT24_PM2
+4,2062188.7668,6081717.5812,0.0000,CALC_NE_LOT24_PM2
+5,2060879.0510,6080738.4906,0.0000,CALC_SW_LOT24_PM2
+6,2060703.3201,6081348.6902,0.0000,CALC_SE_LOT24_PM2
